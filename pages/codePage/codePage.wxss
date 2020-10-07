@@ -1,0 +1,72 @@
+/* pages/codePage/codePage.wxss */
+.code_pg
+{
+  width: 568rpx;
+  height: 840rpx;
+  background: #ffbe30;
+  margin: 0 auto;
+  padding-top: 77rpx;
+}
+.f_36_121212
+{
+  font-size: 36rpx;
+  color:#121212;
+  text-align: center;
+  
+}
+.qr_code
+{
+  width: 332rpx;
+  height: 332rpx;
+  margin: 0 auto;
+  border-radius: 14rpx;
+  overflow: hidden;
+  margin-bottom: 92rpx;
+}
+.f_24_121212
+{
+   font-size: 24rpx;
+  color:#121212;
+  text-align: center;
+}
+.line
+{
+  width: 517rpx;
+  border-bottom: 2rpx dashed #fff;
+  position: relative;
+ 
+}
+.circle
+{
+  position: relative;
+   margin-bottom: 70rpx;
+}
+.circle::after
+{
+  content: "";
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #FFF;
+  border-radius: 50%;
+  left: -16rpx;
+  top:50%;
+  transform: translateY(-50%);
+}
+.circle::before
+{
+  content: "";
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #FFF;
+  border-radius: 50%;
+  right: -16rpx;
+  top:50%;
+  transform: translateY(-50%);
+}
+.canvas-box
+{
+  position: fixed;
+  left: 10000px;
+}

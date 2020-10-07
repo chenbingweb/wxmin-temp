@@ -1,0 +1,47 @@
+.flex_start
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex_end
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex_center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.flex_between
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.flex_around
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+/*两行省略*/
+.ellipsis,.two_line
+{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+
+/*一行省略*/
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}

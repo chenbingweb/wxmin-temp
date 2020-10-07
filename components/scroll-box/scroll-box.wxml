@@ -1,0 +1,9 @@
+
+<scroll-view class="fixed" scroll-y="{{move}}" bindscroll="scroll_1">
+    <view style="width:750rpx;height:300rpx;background:red"></view>
+    <view style="width:750rpx;height:200rpx;background:yellow"></view>
+    
+      <view wx:for="{{10}}" wx:key="_{{index}}" style="line-height:100rpx;border-bottom:2rpx soild red;">{{index}}</view>
+  
+    
+</scroll-view>

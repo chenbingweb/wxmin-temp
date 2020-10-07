@@ -1,0 +1,26 @@
+<view class="fixed">
+  <view class="calen_box show_calen_box">
+    <view class="week_list">
+      <view class="week_item" wx:for="{{week_title}}" wx:key="_{{index}}">{{item}}</view>
+
+    </view>
+    <scroll-view scroll-y class="scroll_view">
+      <view class="day_list">
+        <block wx:for="{{month}}" wx:key="month_{{index}}">
+        <view>{{item.year}}年{{item.month}}月</view>
+        <view  class="day_flex" >
+            
+            <view wx:for="{{item.firstWeek}}" class="day_item" wx:for-item="week" wx:key="week_{{index}}">
+            
+           </view>
+           <view wx:for="{{item.allday}}" bindtap="onselect" data-flag="{{day.flag}}" data-child="{{child}}" data-index="{{index}}" data-day="{{day.day}}" class="day_item {{day.flag==false?'disable':''}} {{day.select?'select':''}}" wx:for-item="day" wx:for-index="child" wx:key="day_{{index}}">
+            {{day.day}}
+           </view>
+           
+        </view>
+        </block>
+        
+      </view>
+    </scroll-view>
+  </view>
+</view>

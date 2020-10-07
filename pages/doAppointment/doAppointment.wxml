@@ -1,0 +1,60 @@
+<!--pages/doAppointment/doAppointment.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view style="padding-bottom:40rpx;">
+  <!-- 基本新 -->
+  <view class="base_info flex_center">
+    <view class="icon_box logo">
+      <image mode="aspectFit" src="{{detail.logo}}" style="width:112rpx;height:112rpx"></image>
+    </view>
+    <view class="title" style="color:#e43943">{{detail.name}}</view>
+    <view class="f_24_999" style="color:#e43943">{{detail.area_name}}/{{detail.num}}</view>
+  </view>
+  <!-- 日期选择  -->
+  <view>
+    <swiper-date jjr="{{jjr}}"  displayrefreshtime="{{detail.display_refresh_time}}" refreshtime="{{detail.refresh_time}}" selectFn="{{selectFn}}"/>
+  </view>
+  <!-- 预约日期状态 -->
+  <view class="appointments_box">
+    <view wx:if="{{serverList.length}}">
+      <view class="flex_between appoint_item" wx:for="{{serverList}}" wx:key="{{index}}">
+        <view class="flex_start time_infor">
+          <view>{{item.start_time}}~{{item.end_time}}</view>
+          <view class="flex_start">
+              <view style="margin:0 10rpx;">/</view>
+              <!-- -(item.num||0) -->
+              <view>剩{{item.reserve_limit-item.reserve_count}}位</view>
+          </view>
+        </view>
+        <view class="flex_start">
+          <view style="margin-right:10rpx;">
+            <count-num item="{{item}}" total="{{detail.max_reserve_user}}" num_p="{{item.num||1}}" disable="{{item.status!='normal'}}" callBack="{{numCallBack}}"/>
+          </view>
+          
+          <view class="btn" wx:if="{{item.status =='closed'}}" style="background:#cecece">停止预约</view>
+          <view bindtap="onDoAppoint" data-tid="{{item.id}}" url="../appointSuccess/appointSuccess" class="btn" wx:elif="{{item.status=='normal'}}">预约</view>
+          <view class="btn" wx:elif="{{item.status =='full'}}" style="background:#fc4e42">约满</view>
+          <view class="btn" wx:elif="{{item.status=='reserved'}}" style="background:#387bfb">已预约</view>
+        </view>
+      </view>
+     </view>
+     <view wx:else class="no_info" style="margin:0">暂无可预约信息</view>
+  </view>
+  
+  <!-- 详情 -->
+  <view class="detail">
+    <view class="icon_box" style="margin-bottom:38rpx;">
+      <image src="../../images/line_title.png" style="width:673rpx;height:30rpx"></image>
+    </view>
+    <!--详情 -->
+    <view wx:if="{{detail.summary}}" style="width:674rpx" class="_rich_box">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      <!-- <view class="icon_box">
+        <image src="../../images/img/3.jpg" style="width:674rpx;"></image>
+      </view> -->
+    </view>
+    <view wx:else class="no_info">
+      暂无店铺信息
+    </view>
+  </view>
+</view>
+

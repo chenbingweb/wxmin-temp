@@ -1,0 +1,25 @@
+<!--pages/appointSuccess/appointSuccess.wxml-->
+<view style="padding-top:220rpx;">
+    <view class="icon_box">
+      <image src="../../images/success.png" style="width:206rpx;height:164rpx"></image>
+    </view>
+    <view class="f_42_121212">恭喜您！预约成功</view>
+    <view style="text-align:center;margin-top: 20rpx;" wx:if="{{detail.time_long}}">购物时长:{{detail.time_long}}分钟</view>
+    <view class="info_box">
+      <view>请于{{detail.date}}日 {{detail.start_time}}前</view> 
+      <view style="margin:20rpx 0;">到八达岭奥莱『{{detail.shop}}』店铺出示预约</view> 
+      <view>二维码，进入店铺。</view> 
+       
+    </view>
+    <view class="btn" bindtap="onBack">完成</view>
+</view>
+<!-- 关注公众号 
+ imgCode: false,
+      official: true
+-->
+<view wx:if="{{imgCode}}">
+    <follow-gzh/>
+</view>
+<view class="off">
+  <official-account bindload="onSuccess" binderror="onFail"></official-account>
+</view>

@@ -1,0 +1,194 @@
+.info_release_box
+{
+  width: 700rpx;
+  /* min-height:648rpx; */
+  margin: 0 auto; 
+  align-items:  flex-start;
+}
+.info_release_box .info_left
+{
+  width: 90rpx;
+  /* min-height:648rpx; */
+
+}
+.info_release_box .info_right
+{
+  width: 613rpx;
+  color:#332800;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding-left: 18rpx;
+}
+.info_release_box .photo_box
+{
+  border:50%;
+}
+.info_release_box .ding_zhi
+{
+  width: 47rpx;
+  height: 27rpx;
+  color:white;
+  font-size: 20rpx;
+  background-color: #e60012;
+  margin-left: 14rpx;
+  line-height: 27rpx;
+  text-align: center;
+}
+.bottom_nav
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.bottom_nav_box
+{
+  width: 750rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 0rpx;
+  color:#333333;
+  font-size: 24rpx;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+   box-shadow: 0px 4rpx 2rpx 6rpx #e7e7e7;
+   justify-content: flex-start;
+}
+.home_box
+{
+  width: 100rpx;
+  text-align: center;
+}
+.phone_box
+{
+  width: 430rpx;
+  height: 70rpx;
+  position: relative;
+  margin-left: 60rpx;
+}
+/*推荐  */
+.scroll_view_box
+{
+  display: inline-flex;
+  padding-right: 25rpx;
+  box-sizing: border-box;
+}
+.recommont_title_box
+{
+  display: flex;
+  justify-content: space-between;
+}
+/*推荐房源  */
+.recommont_source
+{
+  width: 484rpx;
+  height: 352rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 1px 1rpx 10rpx 3rpx #e7e7e7;
+  margin-right: 20rpx;
+}
+.info_box
+{
+  color:#333;
+  font-size: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 14rpx;
+
+}
+.item_info
+{
+  width: 100%;
+ line-height: 70rpx;
+}
+.child_1
+{
+  color:#666666;
+  font-size: 28rpx;
+}
+.scroll_view
+{
+  width: 750rpx;
+  /* height: 365rpx; */
+
+}
+
+/*  */
+.list_item_
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height:200rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f4f4f4;
+  padding: 0 25rpx;
+  padding-top: 23rpx;
+  padding-bottom: 10rpx;
+}
+.company_name
+{
+  color:#666666;
+  font-size: 28rpx;
+  line-height: 43rpx;
+}
+.label_item
+{
+  color:#666666;
+  font-size: 28rpx;
+  padding: 6rpx 8rpx;
+  background-color: #f4f4f4;
+  margin-right: 18rpx;
+}
+.label_item:last-child
+{
+  margin-right:0;
+}
+.job_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top
+{
+  width: 46rpx;
+  height: 26rpx;
+  background-color: #e60012;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 26rpx;
+  color:white;
+  margin-left: 15rpx;
+}
+.job_name
+{
+  color:#333333;
+  font-size: 30rpx;
+  line-height: 43rpx;
+}
+.money
+{
+  color:#fed545;
+  font-size: 30rpx;
+}
+
+.user_name
+{
+  color:#666666;
+  font-size: 28rpx;
+  padding-left: 0rpx;
+}
+.img_info_child_item
+{
+  margin-top:10rpx;
+  margin-right: 10rpx;
+}
+.img_info_child_item:nth-of-type(3n)
+{
+  margin-right: 0;
+}

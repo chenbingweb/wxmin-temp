@@ -1,0 +1,79 @@
+/* components/calendar/calendar.wxss */
+.fixed
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999999999999999999;
+}
+.calen_box
+{
+  width: 700rpx;
+  height: 800rpx;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  bottom: -810rpx;
+  transform: translateX(-50%);
+  border-radius: 10rpx;
+  transition: 0.5s bottom;
+}
+.show_calen_box
+{
+   bottom: 10rpx;
+}
+.week_list
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 2rpx solid red;
+}
+.week_item
+{
+  width:100rpx;
+  text-align: center;
+
+}
+.scroll_view
+{
+  position: absolute;
+  left: 0;
+  top:100rpx;
+  bottom: 10rpx;
+  right: 0;
+  background: yellow;
+  
+}
+.day_list
+{
+   width: 700rpx;
+   margin: 0 auto;
+  
+   
+}
+.day_flex
+{
+  display: flex;
+  align-items:center;
+  flex-wrap: wrap;
+}
+.day_item
+{
+  width: 100rpx;
+  text-align: center;
+
+}
+.disable
+{
+  background-color: red;
+}
+.select
+{
+  background-color: white;
+}

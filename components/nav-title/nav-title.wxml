@@ -1,0 +1,19 @@
+<!--components/nav-title/nav-title.wxml-->
+  <view class="flex_end nav_title" style="width:750rpx;height:{{height}}px;background-color:{{color}}">
+    <view class="title f_42_fff relative"
+     style="line-height:{{lineHeight}}px;color:{{fontColor}}">
+     <view class="icon_box arrow" wx:if="{{showBack}}" bindtap="onBack">
+        <image src="../../images/{{arrowColor?'arrow_b.png':'arrow_w.png'}}" style="width:16rpx;height:32rpx"></image>
+     </view>
+     <view class="address flex_start" bindtap="onChange" wx:if="{{address}}">
+      <view style="font-weight:bold">{{area}}</view>
+      <view class="icon_box" style="margin-left:10rpx;">
+        <image src="../../images/down.png" style="width:24rpx;height:14rpx"></image>
+      </view>
+     </view>
+     <view style="font-size: 34rpx;">
+      {{title}}
+     </view>
+     
+    </view>
+  </view>

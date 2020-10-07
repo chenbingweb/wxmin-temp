@@ -1,0 +1,79 @@
+/* components/tab/tab.wxss */
+.box
+{
+  width:100%;
+  height: 90rpx;
+  border-bottom: 2rpx solid #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.btn
+{
+  text-align: center;
+  color:#999;
+  font-size: 28rpx;
+  width: 33.3333%;
+  box-sizing: border-box;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.btn_select
+{
+  color:#1fa9f2;
+  border-bottom: 4rpx solid #1fa9f2;
+}
+.btn_select_bg
+{
+  background-color: #f9f6f6;
+}
+.border_midd
+{
+  border-left: 2rpx solid #f4f4f4 !important;
+  border-right: 2rpx solid #f4f4f4 !important;
+}
+/* 选择 */
+.select_ct
+{
+
+  width: 50%;
+  color:#333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.select_ct::after
+{
+  content: '';
+  display: block;
+  width: 16rpx;
+  height: 16rpx;
+  border-bottom:2rpx solid #9a9a9a;
+  border-right: 2rpx solid #9a9a9a;
+  transform:translateY(-5rpx) rotateZ(45deg) ;
+  margin-left:0rpx;
+}
+.picker
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  
+}
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+.shop_name
+{
+  /* width: 136rpx; */
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}

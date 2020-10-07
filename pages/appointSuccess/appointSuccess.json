@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "follow-gzh":"../../components/follow-gzh/follow-gzh"
+  },
+  "navigationBarTitleText": "预约成功"
+}

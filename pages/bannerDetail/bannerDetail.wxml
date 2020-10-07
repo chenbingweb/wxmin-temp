@@ -1,0 +1,10 @@
+<!--pages/bannerDetail/bannerDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view style="padding:30rpx" >
+  <view wx:if="{{detail.details}}" style="width:674rpx;overflow:hidden">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  <view wx:else class="no_info">
+    暂无店铺详情信息
+  </view>
+</view>

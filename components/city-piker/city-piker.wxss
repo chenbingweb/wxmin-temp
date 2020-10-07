@@ -1,0 +1,55 @@
+/* components/city-piker/city-piker.wxss */
+.picker_view_box
+{
+ position: fixed;
+  bottom: -1000rpx;
+  left: 0;
+  width:100%; 
+  z-index: 99999999999999999;
+  transition: 5s;
+  transition-delay: 5s;
+}
+.picker_view
+{
+ 
+  background-color: white;
+  /* height: 480rpx; */
+height:570rpx;
+  padding-top:60rpx;
+  box-sizing: border-box;
+}
+.item
+{
+  height: 80rpx;
+  text-align: center;
+  line-height:80rpx;
+  font-size: 28rpx;
+}
+.control_button
+{
+  position: absolute;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 28rpx;
+  border-bottom: 2rpx solid #6c6a6b;
+  line-height: 80rpx;
+}
+.control_button view
+{
+  width:160rpx;
+  text-align: center;
+}
+.picker_mark
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999999999999999999;
+}

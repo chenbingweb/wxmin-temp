@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "nav-title":"../../components/nav-title/nav-title"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

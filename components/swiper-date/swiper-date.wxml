@@ -1,0 +1,25 @@
+<!--components/swiper-date/swiper-date.wxml-->
+
+<swiper 
+        class="box"
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" 
+        interval="{{interval}}" 
+        duration="{{duration}}">
+        
+  <block wx:for="{{dayList}}" wx:key="__{{index}}">
+    <swiper-item>
+      <view class="swiper-item ">
+        <view 
+        bindtap="onSelect"
+        data-available="{{child.available}}"
+        data-did="{{child.day}}"
+        class="item flex_center relative {{child.istoday?'today':''}} {{child.selected?'selected':''}} {{child.available?'opacity_btn_s':'opacity_btn'}}" wx:for="{{item}}" wx:for-item="child" wx:for-index="_index" wx:key="{{_index}}">
+          <view>{{child.name}}</view>
+          <view style="font-size:20rpx;">{{child.day}}</view>
+          <view class="jjr" wx:if="{{child.jjr}}">{{child.jjr}}</view>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

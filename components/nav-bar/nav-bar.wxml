@@ -1,0 +1,19 @@
+<view class="nav_bar_component" style="{{ showReleaseBox?'pointer-events: all':'pointer-events: none'}}">
+  <view class="nav_box" style="{{isLongP?'height:140rpx':''}}">
+  <!--bindtap="selectNav"   -->
+    <view class="nav_item relative " bindtap="selectNav"  id="{{item.nid}}" wx:for="{{navBar}}" wx:key="nav_{{index}}">
+      <view >
+        <view class="icon_box">
+          <image class="nav_img" style="width:{{item.width}}rpx;height:{{item.height}}rpx" src="{{item.selected?item.icon_s:item.icon}}"></image>
+        </view>
+        <view wx:if="{{false}}" style="text-align:center;color:{{item.selected?color:''}};padding-top:6rpx;" class="{{item.selected?'select_nav':''}}">
+          {{item.name}}
+        </view>   
+        <!-- <view class="num" wx:if="{{index==1}}">2</view> -->
+           <!-- <button class="login_btn" open-type="getUserInfo" bindgetuserinfo="selectNav"  id="{{item.nid}}"></button> -->
+      </view>
+ 
+    </view>
+
+  </view>
+</view>

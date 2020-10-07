@@ -1,0 +1,17 @@
+<!--components/shop-item/shop-item.wxml-->
+<view class="shop_box flex_between" style="opacity:0; border-bottom: 2rpx solid #efefef;" animation="{{an}}">
+  <view class="icon_box img_box"  bindtap="onDoAppoint" data-status="{{item.is_closed}}" data-sid="{{item.id}}" >
+    <image src="{{item.logo}}" style="width:210rpx;height:150rpx;"></image>
+  </view>
+  <view class="info_box">
+    <view class="s_tile one_line" style="width:100%">{{item.name}}</view>
+    <view class="flex_between" style="width:100%">
+        <view class="info_i">{{item.area_name}}/{{item.num}} </view>
+        <view class="yy_btn" bindtap="onDoAppoint" data-status="{{item.is_closed}}" data-sid="{{item.id}}" wx:if="{{!item.is_closed}}">预约</view>
+        <view class="yy_btn" style="background-color:#ddd" bindtap="onDoAppoint" data-status="{{item.is_closed}}" data-sid="{{item.id}}" wx:if="{{item.is_closed}}">停止预约</view>
+      
+    </view>
+  </view>
+  <!-- aspectFill -->
+  
+</view>

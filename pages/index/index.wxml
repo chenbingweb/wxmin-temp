@@ -1,0 +1,42 @@
+<cb  wx:if="{{false}}"/>
+<nav-title wx:if="{{false}}" title="" address="{{true}}" area="{{area}}" addressFn="{{addressFn}}"/>
+<view wx:if="{{true}}" class="fixed" style="padding-bottom:{{110+isLongP}}rpx;padding-top:0px">
+  <paging contentTip="暂无预约信息" dataObj="{{dataObj}}" bindpageData="onPageData">
+    <view slot="list" style="padding-bottom:30rpx">
+      <!-- 轮播图 -->
+      <view class="swiper_box relative">
+        <swiper-base wx:if="{{banner.length}}" height="350" imgsData="{{banner}}" baseSet="{{baseSet}}" />
+        <view wx:else class="ske" style="with:750rpx;height:350rpx"></view>
+      </view>
+      <view class="box-content">
+        <view style="margin-bottom:40rpx;">
+        <!-- distance="-270" -->
+          <search-bar bg="#fcfcfc" sc="#999999" icon="../../images/search.png"  color="#999999" callback="{{onConfirm}}"/>
+        </view>
+        <!-- 标题 -->
+        <view class="title_box flex_between">
+          <view class="icon_box">
+            <image src="../../images/shop.png" style="width:129rpx;height:33rpx"></image>
+          </view>
+          <view class="title_content">精选商铺 心享服务 </view>
+        </view>
+        <!-- 分类选择 -->
+        <view>
+          <nav-class cateFn="{{cateFn}}" areaFn="{{areaFn}}" areas="{{areas}}" categories="{{categories}}"/>
+        </view>
+        <!-- 商品列表 wx:if="{{list.length}}"-->
+        <view style="padding-top:0rpx;background:#fff" >
+          <view  wx:for="{{list}}"  wx:key="_{{index}}">
+            <shop-item item="{{item}}" />
+          </view>
+          
+        </view>
+        <!-- <view wx:else class="no_info" style="padding-bottom:50rpx;margin-top:20rpx">暂无预约信息</view> -->
+      </view>
+    </view>
+  </paging>
+
+</view>
+
+
+<city-piker-3 wx:if="{{false}}"  cityList="{{cityList}}" bindcancelCity="onCancelCity" shows="{{showAddress}}" bindcitySelect="oncitySelect"/> 

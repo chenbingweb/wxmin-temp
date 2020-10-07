@@ -1,0 +1,25 @@
+<scroll-view 
+     scroll-top="{{scrollTop}}"
+     class="scroll_box"
+     lower-threshold="10" 
+     scroll-y="{{scroll}}"
+     bindscroll="onScroll"
+     bindscrolltolower="scrolltolower"
+     bindscrolltoupper="scrolltoupper">
+  <view style="padding-bottom:50rpx" >
+    <slot name="list"></slot>
+    <!-- hidden="{{!pageFlage}}" -->
+    <view wx:if="{{showMore}}" hidden="{{!pageFlage}}" class="no_data">加载更多</view>
+    <view wx:if="{{showNoData}}" hidden="{{!pageFlage}}"  class="no_data">没有更多</view>
+    <view  wx:if="{{showNoContent}}"  class="no_data">{{contentTip}}</view>
+    
+    <!-- <view wx:if="{{showNoContent}}" class="no_data_1" style="padding-top:{{paddingtop}}rpx;padding-bottom:{{paddingbottom}}rpx">
+      <view>
+        <image src="../../images/no_info.png" style="width:244rpx;height:205rpx"></image>
+      </view>
+      <view>{{contentTip}}</view>
+    </view> -->
+     <slot name="more" ></slot>
+  </view>
+   
+</scroll-view>

@@ -1,0 +1,60 @@
+/* components/swiper-date/swiper-date.wxss */
+@import "../../app.wxss";
+.box
+{
+  width: 750rpx;
+  margin:0 auto;
+  height: 125rpx;
+  background-color: #f6f6f6;
+}
+.swiper-item
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.item
+{
+  flex-direction: column;
+  font-size: 28rpx;
+  color:#7d7d7d;
+  width: 14.3%;
+  overflow: hidden;
+  height: 125rpx;
+}
+.selected
+{
+  background-color: #387bfb;
+  color:#fff!important;
+}
+.today
+{
+  color:#fc4e42;
+}
+.opacity_btn
+{
+  opacity: 0.5;
+}
+.jjr
+{
+  position: absolute;
+  width: 200rpx;
+  text-align: center;
+  font-size: 12rpx;
+  color: #ffffff;
+  background-color: #fc4e42;
+  transform: rotateZ(45deg);
+  line-height: 22rpx;
+  left: -79rpx;
+top: 95rpx;
+
+  /* left: -82rpx;
+  top: 100rpx; */
+
+
+}
+.opacity_btn_s
+{
+  font-weight: 600;
+}

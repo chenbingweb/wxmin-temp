@@ -1,0 +1,9 @@
+/* components/avatar/avatar.wxss */
+.photo_img
+{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}

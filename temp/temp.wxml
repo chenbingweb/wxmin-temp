@@ -1,0 +1,119 @@
+<!---发布信息-->
+<template name="info_release_temp">
+  <view class="info_release_box flex_between">
+    <view class="info_left">
+      <view class="icon_box photo_box">
+        <image style="width:90rpx;height:90rpx;border-radius:50%" src="{{infoData.head_img}}"></image>
+      </view>
+    </view>
+    <view class="info_right">
+      <view class="inline_flex">
+        <view>{{infoData.username}}</view>
+        <view class="ding_zhi" wx:if="{{infoData.is_top=='1'}}">顶置</view>
+      </view>
+      <view style="color:#333">{{infoData.detail}}</view>
+      <!-- <view class="icon_box" wx:if="{{infoData.img_url.length==1}}">
+        <image style="width:596rpx;height:416rpx;" src="{{imgUrl+infoData.img_url[0]}}"></image>
+      </view> -->
+      <view  class="flex_start imgs_box_container" style="flex-wrap:wrap;"> 
+        <view bindtap="viewImg" data-index="{{index}}" class="icon_box img_info_child_item" wx:for="{{infoData.img_url}}" wx:key="info_{{index}}">
+          <image mode="aspectFill" style="width:180rpx;height:180rpx" src="{{imgUrl+item}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<!--返回首页和收藏  -->
+<template name="nav_back">
+  <view class="bottom_nav">
+    <view class="bottom_nav_box inline_flex">
+      <view class="home_box" style="margin-right:24rpx">
+        <view class="icon_box">
+          <image src="../../images/home_yes.png" style="width:49rpx;height:50rpx;"></image>
+        </view>
+        <view>
+          首页
+        </view>
+      </view>
+      <view class="home_box">
+        <view class="icon_box">
+          <image src="../../images/collect_icon.png" style="width:52rpx;height:50rpx;"></image>
+        </view>
+        <view>
+          收藏
+        </view>
+      </view>
+      <view class="phone_box">
+        <image class="absolute" style="width:430rpx;height:70rpx;" src="../../images/phone_btn.png"></image>
+        <view class="absolute flex_center">
+          <view class="icon_box">
+            <image src="../../images/phone_icon.png" style="width:21rpx;height:30rpx"></image>
+          </view>
+          <view style="color:white;font-size:28rxp;padding-left:10rpx">苏先生</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<!--推荐模板  -->
+<template name="recomment">
+  <scroll-view class="scroll_view" scroll-x>
+    <view wx:if="{{!nav}}" class="scroll_view_box">
+      <navigator url="../sellHouseDetail/sellHouseDetail?bid={{item.id}}" class="icon_box recommont_source" wx:for="{{recomData}}" wx:key="item_{{index}}">
+        <view class="icon_box">
+          <image src="{{imgUrl+item.img_url}}" style="width:484rpx;height:219rpx"></image>
+        </view>
+        <view class="info_box">
+          <view class="inline_flex item_info">
+            <view class="one_line" style="width:240rpx">{{item.name}}</view>
+            <view>
+              <text style="color:#e60012;font-size:36rpx">{{item.amount}}</text>/月</view>
+          </view>
+          <view wx:if="{{item.address}}" class="child_1">{{item.address}}</view>
+          <view wx:else class="child_1">{{item.door}} | {{item.area}}</view>
+        </view>
+      </navigator>
+    </view>
+    <view wx:else class="scroll_view_box">
+      <view url="../sellHouseDetail/sellHouseDetail?bid={{item.id}}" class="icon_box recommont_source" wx:for="{{recomData}}" wx:key="item_{{index}}">
+        <view class="icon_box">
+          <image src="{{imgUrl+item.img_url}}" style="width:484rpx;height:219rpx"></image>
+        </view>
+        <view class="info_box">
+          <view class="inline_flex item_info">
+            <view class="one_line" style="width:240rpx">{{item.name}}</view>
+            <view>
+              <text style="color:#e60012;font-size:36rpx">{{item.amount}}</text>/月</view>
+          </view>
+          <view wx:if="{{item.address}}" class="child_1">{{item.address}}</view>
+          <view wx:else class="child_1">{{item.door}} | {{item.area}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</template>
+<!--毛遂自荐列表模板  -->
+<template name="recomentSelf">
+  <navigator  url="../workDetail/workDetail?sid={{item.id}}" class="list_item flex_start" wx:for="{{arr}}" wx:key="s_{{index}}">
+    <view class="icon_box" style="margin-right:30rpx;">
+      <image src="{{item.head_img}}" style="width:122rpx;height:122rpx;border-radius:50%"></image>
+    </view>
+    <view style="width:548rpx">
+      <view class="job_box">
+        <view class="job_name inline_flex">
+          <view>{{item.category}}</view>
+          <view class="user_name">{{item.name}}</view>
+          <view class="top" wx:if="{{item.is_top}}">顶置</view>
+        </view>
+        <view class="money">{{item.pay_start}}K-{{item.pay_end}}K</view>
+      </view>
+      <view class="company_name one_line">
+        {{item.info}}
+      </view>
+      <view class="inline_flex">
+        <view class="label_item">{{item.year}}</view>
+        <view class="label_item">{{item.education}}</view>
+      </view>
+    </view>
+  </navigator>
+</template>

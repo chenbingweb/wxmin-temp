@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swiper-date":"../../components/swiper-date/swiper-date"
+  },
+  "navigationBarTitleText": "预约"
+}

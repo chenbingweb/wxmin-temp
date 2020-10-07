@@ -1,0 +1,66 @@
+/* components/search-bar/search-bar.wxss */
+.flex_start
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex_end
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex_center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.flex_between
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.relative
+{
+  position: relative;
+}
+.absolute
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+}
+.search_box
+{
+  width: 620rpx;
+  background: #eeeeee;
+  height: 80rpx;
+  margin: 0 auto;
+  border-radius: 40rpx;
+  background-color:#fcfcfc;
+  border:2rpx solid #ffbe30;
+}
+._input
+{
+  width:84%;
+  height: 50rpx;
+  font-size: 30rpx;
+  /* padding: 0 60rpx; */
+  box-sizing: border-box;
+}
+.ani
+{
+  transition: all linear 0.1s;
+}
+.del
+{
+  position: absolute;
+  right: 20rpx;
+  top:50%;
+  transform: translateY(-50%);
+}

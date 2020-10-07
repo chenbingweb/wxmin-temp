@@ -1,0 +1,66 @@
+/* components/follow-gzh/follow-gzh.wxss */
+@import "../../app.wxss";
+.info
+{
+  width:750rpx;
+  height: 118rpx;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) ;
+  top:0;
+}
+.f_20_7d7d7d
+{
+  font-size: 20rpx;
+  color:#7d7d7d;
+}
+.f_24_121212
+{
+  font-size: 24rpx;
+  color:#121212;
+}
+.box
+{
+  box-sizing: border-box;
+  padding: 0 20rpx 0 58rpx;
+
+}
+.btn
+{
+  width:118rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color:#39b901;
+  border:2rpx solid #39b901;
+  border-radius: 10rpx;
+}
+.bs
+{
+ box-shadow: 0px 0rpx 20rpx 0rpx #e7e7e7;
+
+}
+.pos_2
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width:500rpx;
+  height: 500prx;
+  transform: translateX(-50%) translateY(-50%);
+}
+.gg
+{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.closed
+{
+  position: absolute;
+  left: 50%;
+  top: 116%;
+  width: 500rpx;
+  height: 500prx;
+  transform: translateX(-50%) translateY(-50%);
+
+}

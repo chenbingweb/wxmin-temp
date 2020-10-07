@@ -1,0 +1,41 @@
+/* pages/appointSuccess/appointSuccess.wxss */
+.f_42_121212
+{
+  font-size: 42rpx;
+  color:#121212;
+  text-align: center;
+  font-weight: 500;
+  margin-top:30rpx;
+}
+.info_box
+{
+  width: 670rpx;
+  margin: 0 auto;
+  font-size: 26rpx;
+  color:#7d7d7d;
+  text-align: center;
+  margin-top:60rpx;
+  border-top:2rpx solid #cecece;
+  padding-top:50rpx;
+}
+.btn
+{
+  width:518rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  background-color: #ffbe30;
+  text-align: center;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  color:#fff;
+  font-size: 34rpx;
+  margin-top: 200rpx;
+}
+.off
+{
+  position: fixed;
+ left:50%;
+ transform: translateX(-50%);
+  top:0;
+  width: 700rpx;
+}

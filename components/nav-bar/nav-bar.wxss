@@ -1,0 +1,153 @@
+/* components/nav-bar/nav-bar.wxss */
+.nav_bar_component
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 9999999999;
+  pointer-events: none; 
+}
+
+.nav_bar_component .nav_box
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+  width:100%;
+  background-color: white;
+  box-sizing: border-box;
+  border-top:2rpx solid #e5e5e5;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  z-index:99999;
+  pointer-events: all;
+  padding-top:30rpx;
+   /* box-shadow: 0px 4rpx 2rpx 6rpx #e7e7e7; */
+}
+.nav_bar_component .nav_item
+{
+  width:50%;
+  /* height: 88rpx; */
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color:#999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.nav_bar_component .select_nav
+{
+  color:#a1a1a1;
+}
+.nav_bar_component .nav_img
+{
+  width:32rpx;
+  height: 32rpx;
+  
+}
+.nav_bar_component .icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav_bar_component .login_btn
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  opacity: 0;
+}
+.navPos
+{
+  position:relative;
+  top:-50rpx;
+
+}
+.img_box
+{
+ border-radius: 50%;
+  background: white;
+  overflow: hidden;
+  width: 97rpx!important;
+  height: 97rpx!important;
+  box-shadow:0px -4rpx 2rpx 3rpx #e7e7e7;
+}
+.tip_font
+{
+  position: absolute;
+  bottom:-26rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*发布选择  */
+.mark_box
+{
+  position: absolute;
+  top:0;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+.release_box
+{
+  width: 750rpx;
+  height: 440rpx;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  /* bottom: 76rpx; */
+   bottom: -1000rpx;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 54rpx 0;
+  box-shadow: 0px 0rpx 6rpx 2rpx #e7e7e7;
+  transition: bottom 0.4s;
+}
+.tab_box
+{
+  width: 33.333333%;
+  height: 165rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color:#666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.down_arr
+{
+  width: 40rpx;
+  height: 40rpx;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  bottom: -14rpx;
+}
+.num
+{
+  width: 42rpx;
+  height: 24rpx;
+  background-color: #fa334a;
+  position: absolute;
+  border-radius: 12rpx;
+  top:-4rpx;
+  right:80rpx;
+  text-align: center;
+  line-height: 24rpx;
+  color:#fff;
+  font-size: 16rpx;
+}

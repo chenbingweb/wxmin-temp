@@ -1,0 +1,17 @@
+<!--components/nav-bar-title/nav-bar-title.wxml-->
+<view class="nav_box" style="height:{{height}}px;top:0;">
+
+
+  <view class="nav flex_center" style="line-height:{{height_1}}px;bottom:10px">
+
+  e嗨到家
+    <view class="flex_start nav_btn" bindtap="onSHow">
+      <view class="f_28_fff">{{city||'北京'}}</view>
+      <view class="flex_center" style="margin-left:10rpx;">
+        <image src="../../images/down_arr.png" style="width:18rpx;height:10rpx;"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<city-piker cityList="{{cityList}}" shows="{{show}}" bindcitySelect="oncitySelect"/>
+<!-- <city-piker-3 cityList="{{cityList}}" shows="{{show}}" bindcitySelect="oncitySelect"/> -->

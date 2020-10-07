@@ -1,0 +1,93 @@
+一：Login.js
+  说明：用户自动登录和手动登录
+  方法：
+    toLogin:用户自动登录
+            参数类型：Object
+            参数说明：{
+                        path:'',//接口地址，默认为空(必传)
+                        loginSucc(res){}//登录成功(必传)，返回用户信息
+                        loginFail(err){}//登录失败(必传)，返回错误信息
+                        data:object类型，
+                        reqtype:undefined,//默认为undefined，表示请求类型是POST
+                        contentType: undefined,//默认为undefined，表示发送内容类型是application/json
+                       }
+    resolveLogin：手动登录
+                   参数类型：Object
+                    参数说明：{
+                                path:'',//接口地址，默认为空(必传)
+                                loginSucc(res){}//登录成功(必传)，返回用户信息
+                                loginFail(err){}//登录失败(必传)，返回错误信息
+                                data:object类型，
+                                reqtype:undefined,//默认为undefined，表示请求类型是POST
+                                contentType: undefined,//默认为undefined，表示发送内容类型是application/json
+                              }
+************************************************************************************************************                              
+二：getUserPower.js
+  说明：用户授权
+  方法：
+    openSettingLists:查看当前用户授权列表
+            参数类型：Object
+            参数说明：{
+                        succ(res){ },
+                        fail(err){ }
+                       }
+三：Tool.js
+  说明：常用工具和微信小程序能力
+  方法：
+    formatTime:时间戳格式
+            参数类型：
+            参数说明：（date（Date类型）, str（连接字符串"-"）, showTime(布尔值，true:显示时间，不传只显示年月日) ）    richTextImg：富文本格式化
+            参数说明：(reg（正则表达式）, strings（超找的字符串）, replaceString（替换的字符串）)
+    getPhoneInfor:获取手机信息
+            参数说明：{
+                        succ(res){},//返回手机信息
+                        fail(err){}//返回失败
+                      }    
+    WXpay：微信支付
+          参数说明：{
+                timeStamp:'',//string
+                nonceStr:'',//string
+                package:'',//string
+                signType:'',//string
+                paySign:''//string
+              }
+          返回promise对象
+    addCard：添加卡券
+          参数说明： {
+            cardId: '',
+                  cardExt: '{"code": "", "openid": "", "timestamp": "", "signature":""}'
+                }, {
+                  cardId: '',
+                  cardExt: '{"code": "", "openid": "", "timestamp": "", "signature":""}'
+                }
+            ]
+          返回promise对象 
+     openCard：查看微信卡包中的卡券。
+          参数说明： [
+              {
+                cardId: '',
+                code: ''
+              }, {
+                cardId: '',
+                code: ''
+              }
+            ]
+          返回promise对象 
+    memberComponent：会员卡组件。
+          参数说明： [
+              {
+                cardId: '',
+                code: ''
+              }, {
+                cardId: '',
+                code: ''
+              }
+            ]
+          返回promise对象 
+    getLocation：会员卡组件。
+          参数说明： {
+             succ(){},//(必传)
+             fail(){}//(必传)
+              type:undefined//默认为 wgs84 返回 gps 坐标，gcj02 返回可用于wx.openLocation的坐标
+          }
+          返回promise对象 

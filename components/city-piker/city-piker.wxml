@@ -1,0 +1,19 @@
+  <view class="picker_mark" hidden="{{!shows}}">
+    <view class="picker_view_box" style="bottom:{{!shows?'-100rpx':'0rpx'}};transition:1s">
+      <view class="control_button">
+        <view catchtap="hiddenPicker" style="color:#9E9E9E;font-size:36rpx">取消</view>
+        <view bindtap="selectCity" style="color:#7ED17D;font-size:36rpx">确认</view>
+      </view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;" class="picker_view" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{province}}" wx:key="pro_{{index}}" class="item">{{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column >
+          <view wx:for="{{getCity}}" wx:key="city_{{index}}" class="item">{{item.name}}</view>
+        </picker-view-column>
+        <!-- <picker-view-column>
+          <view wx:for="{{country}}" wx:key="country_{{index}}" class="item">{{item.name}}</view>
+        </picker-view-column> -->
+      </picker-view>
+    </view>
+  </view>

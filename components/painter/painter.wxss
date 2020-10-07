@@ -1,0 +1,83 @@
+.btns
+{
+  position:absolute;
+  width:750rpx;
+  height:247rpx;
+  top:calc(50vh + 413rpx);
+  left:50%;
+  transform:translateX(-50%);
+
+}
+.fixed
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+}
+.fight
+{
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:calc(50vh + 386rpx);
+  width: 372rpx;
+  height: 126rpx;
+}
+.save
+{
+  position: absolute;
+  left:calc(50vw - 320rpx);
+  top:calc(50vh + 522rpx);
+  width: 308rpx;
+  height: 117rpx;
+}
+.share
+{
+ position: absolute;
+  left:calc(50vw + 10rpx);
+  top:calc(50vh + 522rpx);
+  width: 308rpx;
+  height: 117rpx;
+}
+.share_btn
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  /* opacity: 0; */
+}
+.share_btn_img
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+}
+.back_btn
+{
+  position: absolute;
+  top:50rpx;
+  left: 40rpx;
+}
+.showHB{
+  
+  animation:showHBAN 0.8s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 1s;
+
+}
+@keyframes showHBAN {
+  0% {
+    transform: scale(3)
+
+  }
+  100%{
+   transform: scale(1)
+
+  }
+}

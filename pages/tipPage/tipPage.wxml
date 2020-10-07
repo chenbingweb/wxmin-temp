@@ -1,0 +1,10 @@
+<!--pages/tipPage/tipPage.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="fixed scroll">
+<view class="_rich_box" style="padding-bottom: env(safe-area-inset-bottom);padding-bottom:110rpx;">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      <!-- <view class="icon_box">
+      <image src="../../images/img/3.jpg" style="width:674rpx;"></image>
+    </view> -->
+  </view>
+  </view>

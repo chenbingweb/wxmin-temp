@@ -1,0 +1,161 @@
+<!-- <nav-bar/> -->
+<!-- <cb/> -->
+<nav-title title="我的" arrowColor="{{false}}" fontColor="#fff" color="transparent"/>
+<!-- style="padding-top:{{paddingTop}}px" -->
+<view class="fixed" >
+  <view class="header relative">
+    <view bindtap="onNavTo" class="flex_between info" data-url="../personInfo/personInfo">
+      <view class="flex_start" >
+        <avatar/>
+        <!-- wait_deal has_deal -->
+        <view style="padding-left:20rpx;" wx:if="{{userInfo.visble!='no_apply'}}">
+          <!-- <view class="f_36_fff"><open-data type="userNickName" lang="zh_CN"></open-data></view> -->
+          <view class="f_36_fff flex_start">
+            <open-data wx:if="{{!userInfo.username}}" type="userNickName" lang="zh_CN"></open-data>
+            <view wx:else>{{userInfo.username}}</view>
+            <view class="licence" wx:if="{{userInfo.visble=='wait_deal'}}">认证中</view>
+            <view class="licence" wx:if="{{userInfo.visble=='has_pass'}}">已认证</view>
+            <view class="licence" wx:if="{{userInfo.visble=='no_pass'}}">申请失败</view>
+        
+          </view>
+          <view class="f_26_fff" wx:if="{{userInfo.company!=''}}">{{userInfo.company}}</view>
+          <view class="f_26_fff">{{userInfo.user_phone}}</view>
+        </view>
+        <view style="padding-left:20rpx;" wx:else>
+          <!-- <view class="f_36_fff"><open-data type="userNickName" lang="zh_CN"></open-data></view> -->
+          <view class="f_36_fff flex_start">
+            <view class="flex_start" wx:if="{{isSign}}" >
+              <open-data type="userNickName" lang="zh_CN"></open-data>
+              <view class="licence">未认证</view>
+            </view>  
+            <view wx:else>未注册</view>
+            
+          </view>
+          <view class="f_26_fff" wx:if="{{userInfo.user_phone}}">{{userInfo.user_phone}}</view>
+        </view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/right_arrow2.png" style="width:14rpx;height:24rpx;"></image>
+      </view>
+    </view>
+    <view class="integral_box flex_center relative">
+      <navigator url="../integralRecord/integralRecord" class="flex_center item">
+        <view class="f_42_0a6fff" style="font-weight:bold">{{userInfo.points||0}}</view>
+        <view class="f_22_333333">我的积分</view>
+      </navigator>
+       <navigator url="../integralGift/integralGift" class="flex_center item">
+        <view class="f_42_0a6fff" style="font-weight:bold">{{userInfo.points_order||0}}</view>
+        <view class="f_22_333333">兑换礼品</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="nav_box">
+    <view class="quick_box">
+      <view class="flex_between top_box">
+        <view class="text">我的订单</view>
+        <view class="flex_start">
+          <navigator  url="../orderPlatfom/orderPlatfom?status=all" class="f_26_B9B9B9">查看全部订单</navigator>
+          <view class="icon_box" style="margin-left:20rpx">
+            <image src="../../images/right_arrow.png" style="width:14rpx;height:26rpx;"></image>
+          </view>
+        </view>
+      </view>
+      <view>
+        <my-order-nav/>
+      </view>
+      <!-- <view class="flex_between item_be">
+          <navigator url="../orderPlatfom/orderPlatfom?status=wait_pay" class="icon_box_box flex_center">
+            <view class="icon_box">
+              <image src="../../images/daifukuan.png" style="width:55rpx;height:47rpx"></image>
+            </view>
+            <view class="f_26_333">待付款</view>
+          </navigator>
+          <navigator url="../orderPlatfom/orderPlatfom?status=has_pay" class="icon_box_box flex_center">
+            <view class="icon_box">
+              <image src="../../images/daifahuo.png" style="width:54rpx;height:48rpx"></image>
+            </view>
+            <view class="f_26_333">已付款</view>
+          </navigator>
+          <navigator url="../orderPlatfom/orderPlatfom?status=has_submit" class="icon_box_box flex_center">
+            <view class="icon_box">
+              <image src="../../images/daishouhuo.png" style="width:57rpx;height:48rpx"></image>
+            </view>
+            <view class="f_26_333">已送检</view>
+          </navigator>
+          <navigator url="../orderPlatfom/orderPlatfom?status=has_complete" class="icon_box_box flex_center">
+            <view class="icon_box">
+              <image src="../../images/order-success.png" style="width:41rpx;height:52rpx"></image>
+            </view>
+            <view class="f_26_333">已完成</view>
+          </navigator>
+      </view> -->
+    </view>
+    <navigator wx:if="{{false}}" url="../orderPlatfom/orderPlatfom" class="nav_item flex_between">
+      <view class="flex_start">
+        <view class="icon_box" style="width:53rpx;">
+          <image src="../../images/order_list.png" style="width:35rpx;height:38rpx;"></image>
+        </view>
+        <view class="f_30_000 f_28" style="margin-left:12rpx">平台订单</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/right_arrow.png" style="width:14rpx;height:24rpx;"></image>
+      </view>
+    </navigator>
+    <navigator wx:if="{{false}}" url="../orderUnderLine/orderUnderLine" class="nav_item flex_between">
+      <view class="flex_start">
+        <view class="icon_box" style="width:53rpx;">
+          <image src="../../images/order_list_2.png" style="width:34rpx;height:40rpx;"></image>
+        </view>
+        <view class="f_30_000 f_28" style="margin-left:12rpx">线下订单</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/right_arrow.png" style="width:14rpx;height:24rpx;"></image>
+      </view>
+    </navigator>
+    <navigator url="../invoiceList/invoiceList" class="nav_item flex_between">
+      <view class="flex_start">
+        <view class="icon_box" style="width:53rpx;">
+          <image src="../../images/ticket.png" style="width:40rpx;height:35rpx;"></image>
+        </view>
+        <view class="f_30_000 f_28" style="margin-left:12rpx">开发票</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/right_arrow.png" style="width:14rpx;height:24rpx;"></image>
+      </view>
+    </navigator>
+    <navigator url="../address/address?typesrc=center" class="nav_item flex_between">
+      <view class="flex_start">
+        <view class="icon_box" style="width:53rpx;">
+          <image src="../../images/local.png" style="width:33rpx;height:39rpx;"></image>
+        </view>
+        <view class="f_30_000 f_28" style="margin-left:12rpx">地址管理</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/right_arrow.png" style="width:14rpx;height:24rpx;"></image>
+      </view>
+    </navigator>
+    <view class="nav_item flex_between relative">
+      <view class="flex_start">
+        <view class="icon_box" style="width:53rpx;">
+          <image src="../../images/server.png" style="width:38rpx;height:34rpx;"></image>
+        </view>
+        <view class="f_30_000 f_28" style="margin-left:12rpx">申请售后</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/right_arrow.png" style="width:14rpx;height:24rpx;"></image>
+      </view>
+      <button class="opacity" open-type="contact"></button>
+    </view>
+    <navigator url="../help/help" class="nav_item flex_between">
+      <view class="flex_start">
+        <view class="icon_box" style="width:53rpx;">
+          <image src="../../images/help.png" style="width:39rpx;height:39rpx;"></image>
+        </view>
+        <view class="f_30_000 f_28" style="margin-left:12rpx">帮助中心</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/right_arrow.png" style="width:14rpx;height:24rpx;"></image>
+      </view>
+    </navigator>
+  </view>
+</view>

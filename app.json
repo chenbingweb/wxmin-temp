@@ -1,0 +1,88 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+   "pages/appointSuccess/appointSuccess",
+    "pages/codePage/codePage",
+    "pages/doAppointment/doAppointment",
+    "pages/appointment/appointment",
+    "pages/myCenter/myCenter",
+    "pages/login/login",
+    "pages/bannerDetail/bannerDetail",
+    "pages/tipPage/tipPage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": ""
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false,
+  "usingComponents": {
+    "city-piker-3": "/components/city-piker-3/city-piker-3",
+    "count-num":"/components/count-num/count-num",
+    "poster": "/components/poster-new/poster/index",
+    "painter": "/components/painter/painter",
+    "swiper-base": "/components/swiper-base/swiper-base",
+    "loginPage": "/components/loginPage/loginPage",
+    "paging": "/components/paging/paging",
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "cb": "/custom-tab-bar/index",
+    "nav-title": "/components/nav-title/nav-title",
+    "avatar": "/components/avatar/avatar",
+    "scroll-box": "/components/scroll-box/scroll-box",
+    "search-bar": "/components/search-bar/search-bar",
+    "tab": "/components/tab/tab",
+    "calendar": "/components/calendar/calendar",
+    "nav-bar-title": "/components/nav-bar-title/nav-bar-title",
+    "city-piker": "/components/city-piker/city-piker"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取附近老师信息"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxe6ada8044d893fbf"
+  ],
+  "tabBar": {
+    "custom": false,
+    "color": "#a0a0a0",
+    "selectedColor": "#121212",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/nav_icon/index_no.png",
+        "selectedIconPath": "/images/nav_icon/index_s.png",
+        "text": "首页",
+        "width": "52rpx",
+        "height": "52rpx"
+      },
+      {
+        "pagePath": "pages/tipPage/tipPage",
+        "iconPath": "/images/nav_icon/j_c_no.png",
+        "selectedIconPath": "/images/nav_icon/j_c_yes.png",
+        "text": "规则",
+       "width": "52rpx",
+      "height": "52rpx"
+      },
+      {
+        "pagePath": "pages/appointment/appointment",
+        "iconPath": "/images/nav_icon/my_no.png",
+        "selectedIconPath": "/images/nav_icon/my_yes.png",
+        "text": "预约",
+        "width": "52rpx",
+        "height": "52rpx"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

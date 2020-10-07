@@ -1,0 +1,5 @@
+<view class="flex_start">
+  <view class="left_item" bindtap="onReduce">-</view>
+  <view class="midd">{{num}}</view>
+  <view class="right_item" bindtap="onPlus">+</view>
+</view>

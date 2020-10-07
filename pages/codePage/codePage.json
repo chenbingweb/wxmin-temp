@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "qr-code":"../../components/qr-code/qr-code"
+  },
+  "navigationBarTitleText": "出示二维码"
+}

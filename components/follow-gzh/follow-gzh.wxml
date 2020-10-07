@@ -1,0 +1,22 @@
+<!--components/follow-gzh/follow-gzh.wxml-->
+<view class="flex_between box bs info">
+  <view class=" flex_start">
+    <view class="icon_box" style="margin-right:30rpx;">
+      <image src="../../images/logo.png" style="width:66rpx;height:67rpx"></image>
+    </view>
+    <view>
+      <view class="f_24_121212">八达岭奥莱</view>
+      <view class="f_20_7d7d7d">关注公众号，掌握预约最新信息。</view>
+    </view>
+  </view>
+  <view class="btn" bindtap="onSHow">关注</view>
+</view>
+<view class="fixed gg" wx:if="{{show}}">
+  <view class="pos_2">
+    <image src="../../images/img/code.jpg" style="width:500rpx;height:500rpx"></image>
+    <view class="icon_box closed" bindtap="onHidden">
+      <image src="../../images/close.png" style="width:100rpx;height:100rpx"></image>
+    </view>
+  </view>
+  
+</view>

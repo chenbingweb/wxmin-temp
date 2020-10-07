@@ -1,0 +1,9 @@
+<!--components/time-select/time-select.wxml-->
+<view class="box">
+  <view class="item_box {{item.selected?'selected':''}}" bindtap="onSelect" data-index="{{index}}" data-time="{{item.start}}" wx:for="{{timeList}}" style="background:{{item.selected?'#a87b5a' : item.opacity}}" wx:key="_{{index}}">
+    <view class="top {{item.selected?'selected':''}}">{{item.start<10?'0'+item.start:item.start}}:00</view>
+    <view class="bottom {{item.selected?'selected':''}}">{{item.start+1<10?'0'+(item.start+1):item.start+1}}:00</view>
+    <view class="status" wx:if="{{item.status==1}}">(满)</view>
+    <view class="status" wx:if="{{item.status==0}}">(可预约)</view>
+  </view>
+</view>

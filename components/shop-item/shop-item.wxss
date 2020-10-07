@@ -1,0 +1,52 @@
+/* components/shop-item/shop-item.wxss */
+@import "../../app.wxss";
+.shop_box
+{
+  width: 647rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  /* margin-bottom: 60rpx; */
+}
+.img_box
+{
+  width: 210rpx;
+  height: 150rpx;
+  border:2rpx solid #f5f6f7;
+  border-radius: 10rpx;
+  overflow: hidden;
+  background-color: #fff;
+}
+.info_box
+{
+  /* width: 440rpx; */
+  width: 400rpx;
+  height: 150rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 10rpx 0;
+}
+.s_tile
+{
+  font-size: 32rpx;
+  color:#121212;
+  font-weight: 500;
+}
+.yy_btn
+{
+  width: 128rpx;
+  height:60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color:#fff;
+  background-color: #ffbe30;
+  border-radius: 10rpx;
+  line-height: 60rpx;
+  /* margin-right: 30rpx; */
+}
+.info_i
+{
+  font-size: 24rpx;
+  color:#999999;
+}

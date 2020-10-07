@@ -1,0 +1,17 @@
+ <view class="search_box relative" style="width:{{width}}rpx;background:{{bg}}">
+    <view class="absolute flex_center" bindtap="onFocus">
+      <view class="flex_start"  style="width:320rpx;transition: all linear 0.1s;transform:translateX({{dis}}rpx)">
+        <view class="icon_box" style="margin-right:5rpx;">
+          <image src="{{icon}}" style="width:25rpx;height:26rpx"></image>
+        </view>
+        <view style="font-size:26rpx;color:{{sc}};margin-left:13rpx" wx:if="{{dis!=distance}}">请输入您要搜索的店铺
+</view>
+      </view>
+    </view>
+    <view class="absolute flex_center " wx:if="{{dis==distance}}">
+      <input focus="{{focus}}" confirm-type="search" value="{{search_content}}" class="_input"  bindblur="onBlur" style="color:{{color}}" bindconfirm="onConfirm"></input>
+    </view>
+    <view class="del flex_center" bindtap="onDel" wx:if="{{dis==distance}}">
+      <image src="{{del_icon}}" style="width:30rpx;height:30rpx"></image>
+    </view>
+  </view>

@@ -1,0 +1,20 @@
+<canvas disable-scroll="{{true}}" canvas-id="k-canvas"  style="{{painterStyle}} {{customStyle}}" >
+  <cover-view class="fixed" wx:if="{{false}}">
+
+      <cover-image src="./img/bg_db.png" class="btns" ></cover-image>
+      <cover-image wx:if="{{showBtn}}" class="fight" bindtap="Onfighting" src="./img/jx_post.png" />
+      <cover-image class="save" bindtap="OnSaveHB" src="./img/save_hb.png" />
+      <cover-view class="share">
+         <!-- <cover-image class="share_btn_img" src="./img/share.png" />
+         <button open-type="share" class="share_btn"></button> -->
+         <button plain='true' open-type='share' style='border:0rpx solid white;width: 308rpx;height: 117rpx;'>
+
+        <cover-image src="./img/share.png" style='width: 308rpx;height: 117rpx;'></cover-image>
+
+        </button>
+      </cover-view>
+       <cover-image  bindtap="OnBack" src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx" class="back_btn" ></cover-image>
+     
+    </cover-view>
+   
+</canvas>

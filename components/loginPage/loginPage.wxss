@@ -1,0 +1,192 @@
+/* components/loginPage/loginPage.wxss */
+.pannel
+{
+  width: 700rpx;
+  /* height: 476rpx; */
+  margin: 0 auto;
+  /* box-shadow: 0px 6rpx 20rpx 6rpx #e7e7e7; */
+  border-radius: 10rpx;
+  margin-top: 110rpx;
+  box-sizing: border-box;
+  padding-top: 50rpx;
+   
+}
+.submit_btn,.sb
+{
+  width:700rpx;
+  height:90rpx;
+  border-radius: 45rpx;
+  background: linear-gradient( to right, #3399f8, #306cf6); 
+  margin: 0 auto;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color:#fff;
+  margin-top: 285rpx;
+}
+
+
+.logo_box
+{
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.item
+{
+  /* width: 460rpx; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #dce6f5;
+  box-sizing: border-box;
+  margin-bottom: 50rpx;
+  position: relative;
+}
+.line_0_::after
+{
+  content: '';
+  position: absolute;
+  width: 2rpx;
+  height: 30rpx;
+  background-color: #12121260;
+  right: 110rpx;
+  top:50%;
+  transform: translateY(-50%);
+}
+.input_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color:#999999;
+  font-size: 28rpx;
+}
+/*一行省略*/
+.one_line
+{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+/*图片盒子*/
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.input_item
+{
+  width: 500rpx;
+  height: 70rpx;
+  font-size: 32rpx;
+  color: #121212;
+  /* line-height: 120rpx; */
+  box-sizing: border-box;
+   /* margin-top: 50rpx; */
+  /* padding-left: 50rpx; */
+}
+.submit_btn_
+{
+  width: 320rpx;
+  height: 70rpx;
+  background-color: #e26161;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color:#fff;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 80rpx;
+}
+.check_box
+{
+  color:#121212;
+
+  font-size: 32rpx;
+  width: 200rpx;
+  line-height: 60rpx;
+  text-align: center;
+  box-sizing: border-box;
+ 
+}
+.btn_login
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.bg
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  
+}
+.back
+{
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #121212;
+  width: 200rpx;
+  box-sizing: border-box;
+  padding: 0 60rpx;
+  text-decoration: underline;
+  text-align: center;
+  margin: 0 auto;
+}
+.placeholder
+{
+  font-size: 34rpx;
+  
+  color:#dedede;
+}
+.flex_start
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex_end
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex_center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.flex_between
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.f_26_9b9b9b
+{
+  font-size: 26rpx;
+  color:#9b9b9b;
+}
+.f_26_6a7fa6
+{
+  font-size: 26rpx;
+  color:#6a7fa6;
+}
+.role
+{
+  width: 700rpx;
+  margin: 0 auto;
+  line-height: 60rpx;
+}

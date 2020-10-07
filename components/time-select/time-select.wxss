@@ -1,0 +1,70 @@
+/* components/time-select/time-select.wxss */
+.box
+{
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.item_box
+{
+  width: 172rpx;
+  height: 133rpx;
+  background-color: #a87b5a;
+  position: relative;
+}
+.item_box::after
+{
+  content:"";
+  width: 120rpx;
+  height: 2rpx;
+  background-color: #a87b5a10;
+  position: absolute;
+  left: 25rpx;
+  top: 67rpx;
+  transform: rotate(-38deg);
+
+}
+.item_box.selected::after
+{
+  content:"";
+  width: 120rpx;
+  height: 2rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 25rpx;
+  top: 67rpx;
+  transform: rotate(-38deg);
+
+}
+.status
+{
+  font-size: 20rpx;
+  color:#a87b5a;
+  position: absolute;
+  right: 10rpx;
+  top:0;
+}
+.top
+{
+  font-size: 20rpx;
+  color:#121212;
+  line-height: 66rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+
+}
+.bottom
+{
+  font-size: 20rpx;
+  color:#121212;
+  line-height: 66rpx;
+  box-sizing: border-box;
+  text-align: right;
+  padding-right: 30rpx;
+}
+.selected
+{
+  color:#fff;
+}

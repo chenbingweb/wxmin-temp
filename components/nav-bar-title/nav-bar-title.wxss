@@ -1,0 +1,61 @@
+/* components/nav-bar-title/nav-bar-title.wxss */
+.nav
+{
+  width: 750rpx;
+  /* height: 140rpx; */
+ 
+  text-align: center;
+  line-height: 40rpx;
+  color:#fff;
+  font-size: 28rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+ 
+}
+.nav_box
+{
+  position: fixed;
+  left: 0;
+  right: 0;
+   z-index: 9999999999;
+    background-color: #ff4858;
+}
+
+.flex_start
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex_end
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex_center
+{
+  display: flex;
+  align-items: baseline;
+  justify-content: center
+}
+.flex_between
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.nav_btn
+{
+  position: absolute;
+  left: 32rpx;
+  top:50%;
+  transform: translateY(-50%);
+}
+.f_28_fff
+{
+  font-size: 28rpx;
+  color:#fff;
+}

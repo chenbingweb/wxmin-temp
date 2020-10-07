@@ -1,0 +1,4 @@
+<!--components/avatar/avatar.wxml-->
+<view class="icon_box photo_img" style="width:{{width}}rpx;height:{{height}}rpx;">
+    <open-data type="userAvatarUrl" style="height:{{height}}rpx;transform:scale({{scale}})"></open-data>
+</view>

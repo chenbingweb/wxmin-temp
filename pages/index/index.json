@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "nav-class":"../../components/nav-class/nav-class",
+    "shop-item": "../../components/shop-item/shop-item"
+  },
+  "navigationStyle": "custom",
+  
+  "disableScroll":true
+}

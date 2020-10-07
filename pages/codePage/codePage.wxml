@@ -1,0 +1,21 @@
+<!--pages/codePage/codePage.wxml-->
+<view style="padding-top:100rpx;" wx:if="{{detail.start_time}}">
+  <view class="code_pg">
+    <view class="f_36_121212" style="margin-bottom:70rpx;">{{detail.shop.name}}</view>
+    <view class="icon_box qr_code">
+      <image src="{{detail.qrimg}}" style="width:342rpx;height:342rpx;"></image>
+    </view>
+    <view class="flex_center circle">
+      <view class="line"></view>
+    </view>
+    <view>
+      <view class="f_36_121212" style="margin-bottom:20rpx;">{{detail.start_time+'~'+detail.end_time}}  {{detail.date}}</view>
+       <view class="f_36_121212" style="margin-bottom:20rpx;">{{detail.shop.area}}/{{detail.shop.num}}</view>
+        <view class="f_36_121212" >预约人数：{{detail.user_count||1}}人</view>
+    </view>
+  </view>
+</view>
+ <!-- <canvas style="width:332rpx;height:332rpx;background:#f1f1f1;" canvas-id="mycanvas"/> -->
+ <view class="canvas-box" >
+  <canvas  style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+</view>

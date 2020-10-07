@@ -1,0 +1,47 @@
+<!--pages/appointment/appointment.wxml-->
+<view class="fixed" >
+   <paging contentTip="暂无预约信息" dataObj="{{dataObj}}" bindpageData="onPageData">
+      <view slot="list"  style="padding-bottom:{{110+isLongP}}rpx;padding-top:0px">
+        <view class="relative line_bottom" animation="{{an?item.ani:null}}" style="opacity:0" wx:for="{{list}}" wx:key="{{index}}">
+        
+        <!--   -->
+        <slide-view disabled="{{item.status!=='normal'}}" height="257" width="750" slide-width="200" auto-close>
+          <view bindtap="onNav" data-status="{{item.status}}" data-url="../codePage/codePage?oid={{item.id}}" slot="left" class="left flex_between relative">
+            <!-- <view class="icon_bpx img_box">
+              <image src="{{item.shop.logo}}" style="width:210rpx;height:150rpx"></image>
+             </view> -->
+             
+              <view class="info_box" >
+                <view class="s_tile one_line">{{item.shop.name}}</view>
+                <view class="f_24_999 two_line">预约人数：{{item.user_count}}人</view>
+                <!-- ,normal:正常，canceled：已取消，consumed：已核销，expired：已过期 <string> -->
+                <view class="flex_start">
+                  <view class="f_24_999" style="margin-right:27rpx">{{item.date+' '+item.start_time+'~'+item.end_time}}</view>
+                  <view class="status_btn" wx:if="{{item.status=='canceled'}}" style="background:#cecece">已取消</view>
+                  <view class="status_btn" wx:if="{{item.status=='consumed'}}" style="background:#ffbe30">已核销</view>
+                  <view class="status_btn" wx:if="{{item.status=='expired'}}" style="background:#fc7e8b">已过期</view>
+                </view>
+                
+            </view>
+              
+            <view class="icon_bpx img_box">
+              <image src="{{item.shop.logo}}" style="width:210rpx;height:150rpx"></image>
+            </view>
+          
+            <view class="f_24_999 pos" wx:if="{{item.status =='normal'}}">左滑可取消预约</view>
+          </view>
+          <view slot="right" class="right">
+            <view class="flex_center box">
+              <!-- <navigator url="../codePage/codePage" class="icon_box" style="margin-right:20rpx">
+                <image src="../../images/show_icon.png" style="width:80rpx;height:149rpx"></image>
+              </navigator>  -->
+              <view class="icon_box" bindtap="onCancel" data-aid="{{item.id}}">
+                <image src="../../images/cancel_icon.png" style="width:80rpx;height:149rpx"></image>
+              </view>
+            </view>
+          </view>
+        </slide-view>
+      </view>
+      </view>
+    </paging>
+</view>

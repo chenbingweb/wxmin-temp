@@ -1,0 +1,79 @@
+/* pages/doAppointment/doAppointment.wxss */
+.wxParse-p
+{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.base_info
+{
+  width: 750rpx;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 117rpx;
+  padding-bottom: 50rpx;
+}
+.logo
+{
+  border-radius: 50%;
+  width: 112rpx;
+  height: 112rpx;
+  border:2rpx solid #e9e9e9;
+  overflow: hidden;
+}
+.title
+{
+    font-size: 32rpx;
+  color:#121212;
+  font-weight: 600;
+  margin: 13rpx 0;
+}
+.f_24_999
+{
+  font-size: 24rpx;
+  color:#999;
+}
+.appointments_box
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 40rpx 10rpx;
+}
+.appoint_item
+{
+  width: 730rpx;
+  margin: 0 auto;
+  height: 100rpx;
+  border:2rpx solid #cecece;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding-left: 37rpx;
+  padding-right: 20rpx;
+  margin-bottom: 30rpx;
+}
+.time_infor
+{
+  font-size: 28rpx;
+  color:#121212
+}
+.btn
+{
+  width: 140rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  border-radius:10rpx; 
+  background-color: #ffbe30;
+  font-size: 26rpx;
+  color:#fff;
+}
+.detail
+{
+  width: 674rpx;
+  margin: 0 auto;
+  
+}

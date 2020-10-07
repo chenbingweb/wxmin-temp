@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "shop-item": "../../components/shop-item/shop-item",
+    "slide-view":"../../components/slide-view/index"
+  },
+  "navigationBarTitleText": "预约记录",
+    "disableScroll": true
+}

@@ -1,0 +1,34 @@
+<!--components/nav-class/nav-class.wxml-->
+   <view class="classic" style="{{current=='classic'?'padding-bottom:23rpx':''}} ">
+      <view class="flex_start">
+        <view class="icon_box_box flex_center " wx:for="{{navList}}" wx:key="{{index}}" bindtap="onAreaSelect" data-aid="{{item.id}}">
+          <view class="icon_bg icon_box {{item.selected||item.selectedd?'c_selected':''}}" >
+            <image src="{{item.icon}}" style="width:44rpx;height:53rpx;"></image>
+          </view>
+          <view class="c_name">{{item.name}}</view>
+        </view>
+      </view>
+      <!-- 地区选择 -->
+      <view wx:if="{{current=='area'}}" style="margin-top:40rpx">
+        <scroll-view scroll-x class="area_box_scroll">
+          <view class="flex_inline">
+            <view bindtap="onSelectArea" data-aid="{{item.id}}" class="area_box {{item.selected?'selected':''}}" wx:for="{{areas}}" wx:key="{{index}}">{{item.name}}</view>
+          </view>
+        </scroll-view>
+      </view>
+      <!-- 分类 -->
+      <view class="classic_box_box flex_start" wx:if="{{current=='classic'}}">
+        <!-- <view class="flex_center icon_box_box_1" bindtap="onSelectCl" data-cid="''">
+          <view class="icon_box">
+            <image src="../../images/1_icon.png" style="width:88rpx;height:88rpx"></image>
+          </view>
+          <view class="class_name">全部</view>
+        </view> -->
+        <view class="flex_center icon_box_box_1 " wx:for="{{categoriesList}}"  bindtap="onSelectCl" data-cid="{{item.id}}" wx:key="{{index}}">
+          <view class="icon_box">
+            <image src="{{item.img_url}}"  class="{{item.selected?'selected2':''}}" style="width:88rpx;height:88rpx;border-radius:50%;border:2rpx solid transparent;box-sizing: border-box;"></image>
+          </view>
+          <view class="class_name">{{item.name}}</view>
+        </view>
+      </view>
+    </view>

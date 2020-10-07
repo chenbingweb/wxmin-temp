@@ -1,0 +1,56 @@
+/* components/swiper-base/swiper-base.wxss */
+.swiper_component
+{
+  margin: 0 auto;
+}
+.swiper_component .swiper_size
+{
+  width: 100%;
+  height: 500rpx;
+}
+.btn_login
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.swiper_component .defult_img
+{
+  display:block;
+  width:100%;
+  
+}
+.swiper_component .indicator
+{
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  bottom: 18rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+  padding-right: 14rpx;
+}
+
+.swiper_component .indicator .p_1
+{
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  /*  */
+  margin:0 8rpx;
+  /* border:4rpx solid  #956729; */
+  box-sizing: border-box;
+  background: #fb890b;
+  
+}
+.swiper_component .indicator .active
+{
+  background-color: #0a6fff;
+  width: 24rpx;
+  border-radius: 10rpx;
+}

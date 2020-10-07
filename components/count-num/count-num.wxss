@@ -1,0 +1,39 @@
+/* components/count-num/count-num.wxss */
+@import "../../app.wxss";
+.left_item
+{
+  width: 55rpx;
+  height:50rpx;
+  border-left: 2rpx solid #dae6f7;
+  border-top:2rpx solid #dae6f7;
+  border-bottom: 2rpx solid #dae6f7;
+  text-align: center;
+  border-top-left-radius: 25rpx;
+  border-bottom-left-radius: 25rpx;
+  font-size: 34rpx;
+  color:#121212;
+}
+.right_item
+{
+   width: 55rpx;
+  height:50rpx;
+  border-right: 2rpx solid #dae6f7;
+  border-top:2rpx solid #dae6f7;
+  border-bottom: 2rpx solid #dae6f7;
+  text-align: center;
+  border-top-right-radius: 25rpx;
+  border-bottom-right-radius: 25rpx;
+  font-size: 34rpx;
+  color:#121212;
+}
+.midd
+{
+  width: 50rpx;
+  height: 50rpx;
+  border:2rpx solid #dae6f7;
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 28rpx;
+  color:#000;
+
+}

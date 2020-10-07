@@ -1,0 +1,12 @@
+/* pages/tipPage/tipPage.wxss */
+.wxParse-p
+{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+.wxParse-p image
+{
+  width: 750rpx!important;
+}
