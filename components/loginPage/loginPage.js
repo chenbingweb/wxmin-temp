@@ -9,7 +9,13 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    type:{
+      type:String,
+      value:"",
+      observer:function(n){
 
+      }
+    }
   },
 
   /**
@@ -20,7 +26,9 @@ Component({
     mobile:'',
     count:0,
     check_code:'',
-    selected:false
+    selected:false,
+    mobile_code:'',
+    mobile:""
   },
   created(){
     this.code_id=''
@@ -34,6 +42,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onGetPhone({detail}){
+      console.log(detail)
+      wx.showLoading({
+        title: '获取中...',
+        mask:true
+      })
+      getMobile.bind(this)(detail)
+    },
     onSelect(){
       this.setData({
         selected: !this.data.selected
@@ -43,15 +59,15 @@ Component({
     //登录
     onGotUserInfo({detail}){
     
-      console.log(detail)
-      if (detail.errMsg=="getUserInfo:fail auth deny"||detail.errMsg.indexOf('fail')>-1)
-      {
-        wx.navigateBack({
+      // console.log(detail)
+      // if (detail.errMsg=="getUserInfo:fail auth deny"||detail.errMsg.indexOf('fail')>-1)
+      // {
+      //   wx.navigateBack({
           
-        })
+      //   })
        
-        return
-      }
+      //   return
+      // }
       // if (this.data.mobile == '') {
       //   wx.showToast({
       //     title: '请输入手机号',
@@ -91,25 +107,50 @@ Component({
       
       //   return
       // }
-      wx.showLoading({
-        title: '登录中...',
-        mask: true
-      })
-      wx.login({
-        success:res=>{
-          let data = {
-            // check_code: this.data.check_code,
-            // mobile: this.data.mobile,
-            // verify_code_id:this.code_id,
-            ...detail,
-            ...res
-          }
-          console.log(data)
+      if(this.data.mobile_code==''){
+        return
+      }
+      if(this.properties.type=='edit'){
+        wx.showLoading({
+          title:"修改中...",
+          mask:true
+        })
+        updateMobile.bind(this)({
+          code:this.data.mobile_code
+        })
+        return 
+      }
+      wx.getUserProfile({
+        desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+        success: (detail) => {
+
        
-          userSign.call(this, data)
-        }
-      })
-     
+            wx.showLoading({
+              title: '登录中...',
+              mask: true
+            })
+            wx.login({
+              success:res=>{
+                let data = {
+                  // check_code: this.data.check_code,
+                  // mobile: this.data.mobile,
+                  // verify_code_id:this.code_id,
+                  ...detail,
+                  ...res,
+                  mobile_code:this.data.mobile_code
+                }
+                console.log(data)
+              
+                userSign.call(this, data)
+              }
+            })
+          },
+          fail:()=>{
+            wx.navigateBack({
+          
+            })
+          }
+        })
     },
 
     //登录
@@ -279,6 +320,94 @@ function userSign(data){
     wx.hideLoading()
     wx.showToast({
       title: '登录注册接口报错',
+      icon: 'none'
+    })
+  })
+}
+
+function getMobile(data){
+  // /client/user/get-mobile
+
+  var ajax = new Ajax({
+    header: {
+      // Token: User.userId
+    },
+    data,
+    path:'/user/get-mobile'
+  })
+  ajax.then(res => {
+    wx.hideLoading()
+    if (res.errcode == 200) {
+      console.log(res)
+      this.setData({
+        mobile:res.data,
+        mobile_code:data.code
+      })
+    
+    }
+    else if(res.errcode==1)
+    {
+      wx.showToast({
+        title: res.msg||'网络异常，请稍后再试',
+        icon: 'none'
+      })
+    }
+    else {
+      wx.showToast({
+        title: '网络异常，请稍后再试',
+        icon: 'none'
+      })
+    }
+  })
+  ajax.catch(err => {
+    wx.hideLoading()
+    wx.showToast({
+      title: '网络异常，请稍后再试',
+      icon: 'none'
+    })
+  })
+}
+function updateMobile(data){
+  // /client/user/get-mobile
+
+  var ajax = new Ajax({
+    header: {
+      Authorization: User.userId
+    },
+    data,
+    path:'/user/bind-mobile'
+  })
+  ajax.then(res => {
+    wx.hideLoading()
+    if (res.errcode == 200) {
+     wx.showToast({
+       icon:"success",
+       title: '修改成功',
+     })
+     User.userInfo.mobile = this.data.mobile;
+     setTimeout(()=>{
+       wx.navigateBack()
+     },2000)
+    
+    }
+    else if(res.errcode==1)
+    {
+      wx.showToast({
+        title: res.msg||'网络异常，请稍后再试',
+        icon: 'none'
+      })
+    }
+    else {
+      wx.showToast({
+        title: '网络异常，请稍后再试',
+        icon: 'none'
+      })
+    }
+  })
+  ajax.catch(err => {
+    wx.hideLoading()
+    wx.showToast({
+      title: '网络异常，请稍后再试',
       icon: 'none'
     })
   })

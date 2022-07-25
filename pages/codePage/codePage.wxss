@@ -3,14 +3,17 @@
 {
   width: 568rpx;
   height: 840rpx;
-  background: #ffbe30;
+  /* background: #ffbe30; */
+  background-color: rgba(27, 148, 28, 1);
   margin: 0 auto;
   padding-top: 77rpx;
+  padding-bottom: 30rpx;
 }
 .f_36_121212
 {
   font-size: 36rpx;
-  color:#121212;
+  /* color:#121212; */
+  color:#fff;
   text-align: center;
   
 }
@@ -21,7 +24,7 @@
   margin: 0 auto;
   border-radius: 14rpx;
   overflow: hidden;
-  margin-bottom: 92rpx;
+  margin-bottom: 30rpx;
 }
 .f_24_121212
 {

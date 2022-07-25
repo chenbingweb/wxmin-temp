@@ -12,7 +12,8 @@ Page({
     isLongP:0,
     dataObj:{},
     list:[],
-    an:null
+    an:null,
+    userInfo:{}
   },
 
   /**
@@ -23,6 +24,9 @@ Page({
     User.reload =false;
     if (User.isSign)
     {
+      this.setData({
+        userInfo:User.userInfo
+      })
       this.reload()
     }
     
@@ -135,7 +139,11 @@ Page({
     }
     else
     {
+      this.setData({
+        userInfo:User.userInfo
+      })
       if (this.reloadFlag || User.reload) {
+       
         this.reload()
         User.reload = false;
         this.reloadFlag = false

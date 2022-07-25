@@ -5,14 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    type:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.ty=='edit'){
+      wx.setNavigationBarTitle({
+        title: '编辑',
+      })
+      
+    }
+    this.setData({
+      type:options.ty||''
+    })
   },
 
   /**

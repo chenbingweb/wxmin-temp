@@ -67,3 +67,32 @@
   right: 10rpx;
   bottom: 10rpx;
 }
+.user_info
+{
+  height: 200rpx;
+}
+.img_box_av
+{
+  /* width: 100px;
+  height: 100px; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+.img_box_av .img
+{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.user_info
+{
+  width: 700rpx;
+  margin:0 auto;
+  border-bottom: 2rpx solid #e7e7e7;
+  padding: 20rpx 0;
+}
+.user_text
+{
+  font-size: 36rpx;
+  margin-left: 20rpx;
+}

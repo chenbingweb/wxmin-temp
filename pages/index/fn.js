@@ -88,6 +88,7 @@ export function parsePos(pos,cb){
 export function getIndex(that){
   wx.showLoading({
     title: '加载中..',
+    mask:true
   })
   var data = {
     

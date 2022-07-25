@@ -4,6 +4,7 @@
       <image src="../../images/success.png" style="width:206rpx;height:164rpx"></image>
     </view>
     <view class="f_42_121212">恭喜您！预约成功</view>
+    <view class="code">预约编号：{{detail.reserve_no}}</view>
     <view style="text-align:center;margin-top: 20rpx;" wx:if="{{detail.time_long}}">购物时长:{{detail.time_long}}分钟</view>
     <view class="info_box">
       <view>请于{{detail.date}}日 {{detail.start_time}}前</view> 

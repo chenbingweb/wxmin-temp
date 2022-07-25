@@ -240,18 +240,18 @@ function getCityList(){
   fail获取失败后回调
 */
 function getLocal(cb,fail) {
-  wx.getLocation({
-    type: 'wgs84',
-    success: function (res) {
-      var latitude = res.latitude
-      var longitude = res.longitude
-      cb({
-        latitude,
-        longitude
-      })
-    },
-    fail:fail
-  })
+  // wx.getLocation({
+  //   type: 'wgs84',
+  //   success: function (res) {
+  //     var latitude = res.latitude
+  //     var longitude = res.longitude
+  //     cb({
+  //       latitude,
+  //       longitude
+  //     })
+  //   },
+  //   fail:fail
+  // })
 }
 /*
   说明：新版授权

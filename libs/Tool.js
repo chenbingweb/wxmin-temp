@@ -109,18 +109,18 @@ export default class Tool {
     let option = {};
     option = Object.assign(option, param)
     let promise = new Promise((resolve, reject) => {
-      wx.getLocation({
-        type: option.type || 'gcj02',//默认为 wgs84 返回 gps 坐标，gcj02 返回可用于wx.openLocation的坐标
-        success: function (res) {
-          var latitude = res.latitude
-          var longitude = res.longitude
-          resolve({
-            latitude,
-            longitude
-          })
-        },
-        fail: reject
-      })
+      // wx.getLocation({
+      //   type: option.type || 'gcj02',//默认为 wgs84 返回 gps 坐标，gcj02 返回可用于wx.openLocation的坐标
+      //   success: function (res) {
+      //     var latitude = res.latitude
+      //     var longitude = res.longitude
+      //     resolve({
+      //       latitude,
+      //       longitude
+      //     })
+      //   },
+      //   fail: reject
+      // })
     })
     return promise
 

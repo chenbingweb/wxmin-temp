@@ -14,9 +14,9 @@ let appObj = {
     console.log(res)
     //获取手机信息 wx8fb5edc044b3efc6
     this.getPhoneInfo();
-    // wx.setEnableDebug({
-    //   enableDebug: true
-    // })
+    wx.setEnableDebug({
+      enableDebug: true
+    })
     wx.removeStorage({
       key: 'cartlist',
       success(res) {

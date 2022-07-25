@@ -140,7 +140,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    getIndex(this)
+
     this.setData({
       onConfirm: this.onConfirm,
       areaFn: this.areaFn,
@@ -159,6 +159,18 @@ Page({
       
     //   },
     // })
+   
+    // this.customSwiper = this.selectComponent('#customSwiper')
+    // this.setData({
+    //   addressFn:this.addressFn,
+    //   isLongP: Tool.isLongP()
+    // })
+    //默认为已经注册
+    this.isLogin=true;
+    wx.showLoading({
+      title: '登录中...',
+      mask:true
+    })
     this.setData({
       dataObj: {
         url: _interface.getShopList || '',
@@ -169,16 +181,9 @@ Page({
         }
       }
     })
-    // this.customSwiper = this.selectComponent('#customSwiper')
-    // this.setData({
-    //   addressFn:this.addressFn,
-    //   isLongP: Tool.isLongP()
-    // })
-    //默认为已经注册
-    this.isLogin=true;
-
     User.UserToLogin(res => {
     
+      getIndex(this)
     
       wx.hideLoading()
     

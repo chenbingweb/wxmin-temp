@@ -9,14 +9,14 @@
       icon_s: 'search_bh_s.png', //选中的导航图标(确保images文件夹里有图片)
       path: '../index/index'//跳转路径（填写相对路径）
    }
- wxb77b3cbdf17a6026
-  wxaac1ec0ffd37fc96
+ test wxb77b3cbdf17a6026
+  online wxaac1ec0ffd37fc96
 */
 module.exports={
-  url:'https://outlets.jeemoo.com/client',
-  // url:'http://outlets.5iportal.com/client',
-  imgUrl:'https://outlets.jeemoo.com/',//图片地址
-  // imgUrl: 'http://outlets.5iportal.com/',//图片地址
+  // url:'https://outlets.jeemoo.com/client',
+  // imgUrl:'https://outlets.jeemoo.com/',//图片地址
+   url:'http://outlets.netwintech.com/client',
+  imgUrl: 'http://outlets.netwintech.com/',//图片地址
   staticUrl:'',
   debug:false,//如果为真，则使用假数据
   //自定义导航（参考案例，根据实际项目来配置相关属性）

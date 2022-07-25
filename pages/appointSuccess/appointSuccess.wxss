@@ -7,6 +7,13 @@
   font-weight: 500;
   margin-top:30rpx;
 }
+.code
+{
+  font-size: 26rpx;
+    color: #7d7d7d;
+    text-align: center;
+    margin-top: 24rpx;
+}
 .info_box
 {
   width: 670rpx;

@@ -1,2 +1,2 @@
 <!--pages/login/login.wxml-->
-<loginPage/>
+<loginPage type="{{type}}"/>

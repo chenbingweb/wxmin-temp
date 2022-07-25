@@ -1,5 +1,22 @@
 <!--pages/appointment/appointment.wxml-->
-<view class="fixed" >
+<view class="flex_start user_info">
+  <view class="flex_center img_box_av">
+      <view wx:if="{{!userInfo.avatar}}" >
+        <avatar/>
+      </view>
+      <image wx:else class="img" src="{{userInfo.avatar}}"></image>
+  </view>
+  <view class="user_text">
+    <view class="one_line" style="width: 300rpx;">{{userInfo.nickname||'--'}}</view>
+    <navigator url="../login/login?ty=edit" style="font-size: 30rpx;width: 300rpx;" class="one_line flex_start">
+      <view>{{userInfo.mobile||'--'}}</view>
+      <view class="flex_center">
+        <image src="../../images/edit.png" style="width:30rpx;height:30rpx"></image>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view class="fixed" style="top:120px">
    <paging contentTip="暂无预约信息" dataObj="{{dataObj}}" bindpageData="onPageData">
       <view slot="list"  style="padding-bottom:{{110+isLongP}}rpx;padding-top:0px">
         <view class="relative line_bottom" animation="{{an?item.ani:null}}" style="opacity:0" wx:for="{{list}}" wx:key="{{index}}">
@@ -13,6 +30,7 @@
              
               <view class="info_box" >
                 <view class="s_tile one_line">{{item.shop.name}}</view>
+                <view class="f_24_999 two_line">预约编号：{{item.reserve_no}}</view>
                 <view class="f_24_999 two_line">预约人数：{{item.user_count}}人</view>
                 <!-- ,normal:正常，canceled：已取消，consumed：已核销，expired：已过期 <string> -->
                 <view class="flex_start">

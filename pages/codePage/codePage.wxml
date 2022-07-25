@@ -5,6 +5,7 @@
     <view class="icon_box qr_code">
       <image src="{{detail.qrimg}}" style="width:342rpx;height:342rpx;"></image>
     </view>
+    <view class="f_36_121212" style="font-size: 28rpx;margin-bottom: 20rpx;">预约编号：{{detail.reserve_no}}</view>
     <view class="flex_center circle">
       <view class="line"></view>
     </view>
