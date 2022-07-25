@@ -107,19 +107,19 @@ Component({
       
       //   return
       // }
-      if(this.data.mobile_code==''){
-        return
-      }
-      if(this.properties.type=='edit'){
-        wx.showLoading({
-          title:"修改中...",
-          mask:true
-        })
-        updateMobile.bind(this)({
-          code:this.data.mobile_code
-        })
-        return 
-      }
+      // if(this.data.mobile_code==''){
+      //   return
+      // }
+      // if(this.properties.type=='edit'){
+      //   wx.showLoading({
+      //     title:"修改中...",
+      //     mask:true
+      //   })
+      //   updateMobile.bind(this)({
+      //     code:this.data.mobile_code
+      //   })
+      //   return 
+      // }
       wx.getUserProfile({
         desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
         success: (detail) => {
@@ -137,7 +137,7 @@ Component({
                   // verify_code_id:this.code_id,
                   ...detail,
                   ...res,
-                  mobile_code:this.data.mobile_code
+                  // mobile_code:this.data.mobile_code
                 }
                 console.log(data)
               

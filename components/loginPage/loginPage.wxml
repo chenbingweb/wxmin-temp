@@ -28,7 +28,7 @@
     </view>
     <navigator url="../help/help?src=xy" class="f_26_6a7fa6">《使用协议》</navigator>
   </view>
-  <view class="phone_box">
+  <!-- <view class="phone_box">
       <view class="input_box">
         <input name="check_code" disabled placeholder-class="placeholder" type="number" value="{{mobile}}" bindinput="onInputCode" class="input_item" style="width:500rpx" placeholder='点击右侧获取手机号码'></input>
       </view>
@@ -36,8 +36,8 @@
         获取手机号码
         <button open-type="getPhoneNumber" class="btn_login" bindgetphonenumber="onGetPhone"></button>
       </view>
-  </view>
-  <view class="submit_btn {{mobile_code?'':'disable'}}" style="position:relative" bindtap="onGotUserInfo">
+  </view> -->
+  <view class="submit_btn " style="position:relative" bindtap="onGotUserInfo">
     {{type=='edit'?'修改':'注册'}}
  
     <!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="btn_login"></button> -->
