@@ -118,6 +118,10 @@ Page({
       success:res=>{
         if(res.confirm)
         {
+          wx.showLoading({
+            title: '预约中...',
+            mask:true
+          })
           let num =1;
           let { serverList } = this.data;
           serverList.forEach((item, index) => {

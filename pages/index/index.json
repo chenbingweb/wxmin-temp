@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "nav-class":"../../components/nav-class/nav-class",
-    "shop-item": "../../components/shop-item/shop-item"
+    "shop-item": "../../components/shop-item/shop-item",
+    "puzzleVerify":"../../components/puzzleVerify/puzzleVerify"
   },
   "navigationStyle": "custom",
   

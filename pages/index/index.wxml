@@ -40,3 +40,4 @@
 
 
 <city-piker-3 wx:if="{{false}}"  cityList="{{cityList}}" bindcancelCity="onCancelCity" shows="{{showAddress}}" bindcitySelect="oncitySelect"/> 
+<!-- <puzzleVerify id="puzzle" bindfreshImg="onRefreshImg" bindstatus="onCheck" img-url="{{imgUrl}}"></puzzleVerify> -->

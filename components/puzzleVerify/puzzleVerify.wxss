@@ -1,0 +1,130 @@
+/* components/puzzleVerify/puzzleVerify.wxss */
+.puzzle_bg
+{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top:0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999999999999999999999;
+}
+.move_box{
+  width: 700rpx;
+  height: 300rpx;
+ 
+  background-size: 100% 100%;
+
+}
+.move_container{
+  width: 700rpx;
+  
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #fff;
+  border-radius: 10rpx;
+  background-size: 100% 100%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+
+.move_bg{
+  width: 100rpx;
+  height: 100rpx;
+  background-size: 700rpx 300rpx;
+  /* background-repeat: no-repeat; */
+  position: absolute;
+  left: 0;
+  box-shadow: 0rpx 0rpx 10rpx 6rpx rgba(0, 0, 0, 0.5);
+  /* background-size: cover; */
+}
+
+.msk
+{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.slider_box
+{
+  height: 90rpx;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: blue;
+  position: relative;
+  width: 620rpx;
+  margin:10rpx auto;
+  background-color: #eeebec;
+  border-radius: 6rpx;
+}
+.move_slider{
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  box-shadow: 0rpx 0rpx 10rpx 6rpx rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6rpx;
+}
+.addAni{
+  transition: all linear 0.15s;
+}
+.tip
+{
+  font-size: 24rpx;
+  color:#4f6d61;
+  position: absolute;
+  left:50%;top:50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.bg_slider
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  height: 100%;
+  border-radius: 6rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.control{
+  width: 100%;
+  height: 95rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+.close
+{
+  width: 75rpx;
+  height: 95rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  opacity: 0.6;
+}
+.refresh
+{
+ margin-left: 20rpx;
+}
+.show{
+  transition: all linear 0.2s;
+  opacity: 1;
+  pointer-events: all;
+}
+.hide{
+  transition: all linear 0.2s;
+  opacity: 0;
+  pointer-events: none;
+}

@@ -44,6 +44,13 @@ Component({
   methods: {
     onGetPhone({detail}){
       console.log(detail)
+      if (detail.errMsg=="getUserInfo:fail auth deny"||detail.errMsg.indexOf('fail')>-1){
+        wx.showToast({
+          title: '获取失败',
+          icon:'none'
+        })
+        return
+      }
       wx.showLoading({
         title: '获取中...',
         mask:true
@@ -107,6 +114,7 @@ Component({
       
       //   return
       // }
+      debugger
       if(this.data.mobile_code==''){
         return
       }
@@ -399,7 +407,7 @@ function updateMobile(data){
     }
     else {
       wx.showToast({
-        title: '网络异常，请稍后再试',
+        title:res.msg|| '网络异常，请稍后再试',
         icon: 'none'
       })
     }

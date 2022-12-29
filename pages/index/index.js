@@ -12,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgUrl:"https://img2.baidu.com/it/u=1361506290,4036378790&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",
     banner: [
       // {
       //   img_url:'../../images/img/1.jpg',
@@ -58,6 +59,7 @@ Page({
     cateFn:()=>{},
     swh:490
   },
+ 
   onPageData({ detail }) { 
     let { list } = this.data;
     detail.forEach((item,index)=>{
@@ -146,6 +148,9 @@ Page({
       areaFn: this.areaFn,
       cateFn: this.cateFn
     })
+    // setTimeout(()=>{
+    //   this.selectComponent('#puzzle').open()
+    // },2000)
     // wx.getSystemInfo({
     //   success: (res)=> {
     //     let { platform, model, windowHeight } =res;
@@ -340,6 +345,14 @@ Page({
   onShareAppMessage: function () {
     console.log(getApp().share('', '', `pages/index/index?income=${User.openId}`))
     return getApp().share('', '', `pages/index/index?income=${User.openId}`)
-  }
+  },
+  onRefreshImg(){
+    this.setData({
+      imgUrl:'https://img1.baidu.com/it/u=3438916974,2354463393&fm=253&fmt=auto&app=138&f=JPEG?w=594&h=500'
+    })
+  },
+  onCheck({detail}){
+    console.log(detail)
+  },
  
 })
