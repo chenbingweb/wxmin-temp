@@ -142,15 +142,26 @@ Page({
       this.setData({
         userInfo:User.userInfo
       })
+      if(User.checkMember){
+        User.checkMember = false
+        if(User.userInfo.isOutletsMember===false && User.userInfo.isValidMember){
+          this.showApply()
+          
+        }
+      }
       if (this.reloadFlag || User.reload) {
        
         this.reload()
         User.reload = false;
         this.reloadFlag = false
       }
+      
     }
   },
-
+  showApply(){
+    let applymember = this.selectComponent('#applymember')
+    applymember.showDialogFn()
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -187,6 +198,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return getApp().share('', '', `pages/index/index`)
   }
 })

@@ -9,7 +9,7 @@
       icon_s: 'search_bh_s.png', //选中的导航图标(确保images文件夹里有图片)
       path: '../index/index'//跳转路径（填写相对路径）
    }
- test wxb77b3cbdf17a6026
+ test wxb77b3cbdf17a6026 wxe6ada8044d893fbf
   online wxaac1ec0ffd37fc96
 */
 module.exports={

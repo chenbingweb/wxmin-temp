@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "swiper-date":"../../components/swiper-date/swiper-date"
+    "swiper-date":"../../components/swiper-date/swiper-date",
+    "img-check":"../../components/img-check/img-check",
+    "puzzleVerify":"../../components/puzzleVerify/puzzleVerify"
   },
   "navigationBarTitleText": "预约"
 }

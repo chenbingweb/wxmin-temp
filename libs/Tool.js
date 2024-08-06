@@ -48,7 +48,7 @@ export default class Tool {
    
     if (showTime) {
       //转换成yyyy-m-d h:m
-      format = [year, month, day].map(Tool.formatNumber).join(str) + ' ' + [hour, minute].map(Tool.formatNumber).join(':');
+      format = [year, month, day].map(Tool.formatNumber).join(str) + ' ' + [hour, minute,second].map(Tool.formatNumber).join(':');
     }
     return format
   }

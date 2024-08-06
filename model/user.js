@@ -23,6 +23,7 @@ class User{
     this.time = 10000
     this.wxUser={}
     this.reload=false;
+    this.checkMember=false
    // this.getPos()
     this.ispos=false;
     this.Map = Location;

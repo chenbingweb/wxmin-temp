@@ -1,0 +1,15 @@
+<view class="fixed" wx:if="{{showPrivacy}}">
+  <view class="box">
+    <view class="title">八达岭奥莱预约服务</view>
+    <view class="content">在你使用【八达岭奥莱预约服务】服务之前，请仔细阅读 <text bind:tap="onOpen" style="color:#ffbe30">《八达岭奥莱预约服务隐私保护指引》</text>。如你同意《八达岭奥莱预约服务隐私保护指引》，请点击“同意”开始使用【八达岭奥莱预约服务】。</view>
+    <view class="btns">
+      <view class="left_btn">拒绝
+        <button class="opacity" bind:tap="handleDisAgreePrivacyAuthorization"></button>
+      </view>
+      <view class="right_btn">同意
+        <button class="opacity" id="agree-btn" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization"></button>
+      </view>
+     </view>
+  </view>
+
+</view>

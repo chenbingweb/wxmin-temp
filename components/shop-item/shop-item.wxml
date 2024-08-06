@@ -7,7 +7,7 @@
     <view class="s_tile two_line" style="width:100%">{{item.name}}</view>
     <view class="flex_between" style="width:100%">
         <view class="info_i">{{item.area_name}}/{{item.num}} </view>
-        <view class="yy_btn" bindtap="onDoAppoint" data-status="{{item.is_closed}}" data-sid="{{item.id}}" wx:if="{{!item.is_closed}}">预约</view>
+        <view class="yy_btn" bindtap="onDoAppoint" data-name="{{item.name}}" data-status="{{item.is_closed}}" data-sid="{{item.id}}" wx:if="{{!item.is_closed}}">预约</view>
         <view class="yy_btn" style="background-color:#ddd" bindtap="onDoAppoint" data-status="{{item.is_closed}}" data-sid="{{item.id}}" wx:if="{{item.is_closed}}">停止预约</view>
       
     </view>

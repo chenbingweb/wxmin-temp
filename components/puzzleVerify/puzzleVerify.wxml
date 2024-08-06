@@ -1,9 +1,12 @@
 <view class="puzzle_bg {{show?'show':'hide'}}" >
   <view class="move_container">
        <!-- 背景图片 -->
-      <view class="move_box" style="background-image:url('{{_imgUrl}}')">
-        <view class="msk" style="left:{{left}}px;top: {{top}}px;"> </view>
+      <view class="move_box_1" style="background-image:url('{{_imgUrl}}')">
+        <!-- <view class="msk" style="left:{{left}}px;top: {{top}}px;"> </view>
         <view class="move_bg {{addAni?'addAni':''}}" style="background-image:url('{{_imgUrl}}');left:{{stayX+currentX}}px;top: {{top}}px;background-position: -{{left}}px -{{top}}px;">
+        </view> -->
+        <view  class="move_bg_2 {{addAni?'addAni':''}}" style="background-image:url('{{_imgUrl}}');left:{{stayX+currentX}}px">
+          <!-- <image src="{{_imgUrl}}" mode=""/> -->
         </view>
       </view>
       <view class="slider_box">
@@ -11,7 +14,7 @@
           拖动左边滑块完成上方拼图
         </view>
         <view class="bg_slider {{addAni?'addAni':''}}" style="width:{{per*100}}%"> 
-           
+         
         </view>
         <view class="move_slider {{addAni?'addAni':''}}" catchtouchstart="onStart" catchtouchmove="onMove" catchtouchend="onEnd" style="left:{{currentX}}px">
           <image src="./img/right_arrow.png" style="width:64rpx;height:64rpx" mode=""/>
@@ -27,3 +30,4 @@
       </view>
   </view>
 </view>
+<canvas style="width: 480rpx; height: 300rpx;" type="2d" id="myCanvas" canvas-id="myCanvas" class="canvas"></canvas>

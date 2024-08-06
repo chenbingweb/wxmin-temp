@@ -1,0 +1,33 @@
+<form wx:if="{{show}}" bindsubmit="onConfirm">
+  <view class="mask flex_center">
+    <view class="box">
+      <view class="title">
+        请输入图中验证码
+      </view>
+      <view class="flex_center" style=" margin-left: 20rpx;" >
+        <image style="width:168rpx;height:56rpx" src="{{imgPath}}" mode="" /> 
+          <!-- <image style="width:312rpx;height:116rpx" src="{{imgPath}}" mode="" /> -->
+        </view>
+        <view class="refresh" bindtap="onRefresh">
+          看不清？点击刷新
+        </view>
+        <view class="box_input_3 flex_center">
+          <input type="text" placeholder="请输入验证码" name="number" value="{{val}}" class="input" />
+        </view>
+      <view class="flex_between">
+        <!-- <view class="cancel" bindtap="hidePanel">
+          取消
+        </view> -->
+        <view class="sure relative">
+          确认
+          <button form-type="submit" class="opacity"></button>
+        </view>
+      </view>
+      <view class="flex_center close" bindtap="hidePanel"> 
+        <image src="./cha@2x.png" style="width:35rpx;height:35rpx" mode=""/>
+    </view>
+    </view>
+  
+  </view>
+
+</form>

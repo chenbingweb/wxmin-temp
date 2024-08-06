@@ -1,7 +1,7 @@
 <!--pages/appointment/appointment.wxml-->
 <view class="flex_start user_info">
   <view class="flex_center img_box_av">
-      <view wx:if="{{!userInfo.avatar}}" >
+      <view wx:if="{{userInfo.avatar}}" >
         <avatar/>
       </view>
       <image wx:else class="img" src="{{userInfo.avatar}}"></image>
@@ -63,3 +63,4 @@
       </view>
     </paging>
 </view>
+<apply-member id="applymember"></apply-member>

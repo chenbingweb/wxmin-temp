@@ -1,0 +1,39 @@
+<!--components/user-info/user-info.wxml-->
+<form bindsubmit="onSubmit">
+  <view class="user_bg {{show?'show':'hide'}}">
+    <view class="box">
+      <view class="flex_center close" bindtap="hide">
+          <image src="./imgs/close.png" style="width:35rpx;height:35rpx" mode=""/>
+      </view>
+      <view style="margin-bottom: 30rpx;">
+        <view class="title">
+          昵称
+        </view>
+        <view class="flex_between item_box">
+          <input type="nickname" focus="{{focus}}" name="nickName"  bindblur="onBlur" placeholder-class="placeholder"  class="weui-input" placeholder="请输入昵称" style="width: 300rpx;"/>
+          <view class="get_nick" bindtap="onFocuse">
+            获取昵称
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="title">
+          手机号
+        </view>
+        <view class="flex_between item_box">
+          <input type="text" hidden name="mobile_code" value="{{mobile_code}}"/>
+          <input type="text" disabled name="mobile" value="{{mobile}}"  bindblur="onBlur" placeholder-class="placeholder"  class="weui-input" placeholder="点击右侧获取" style="width: 200rpx;"/>
+          <view class="get_nick relative" style="width:192rpx">
+            获取手机号码
+            <button open-type="getPhoneNumber" class="opacity" bindgetphonenumber="onGetPhone"></button>
+          </view>
+        </view>
+      </view>
+      <view class="btn_confirm {{nickname==''||mobile==''?'disable':''}} relative">
+        确认
+        <button class="opacity" form-type="submit"></button>
+      </view>
+    
+    </view>
+  </view>
+</form>

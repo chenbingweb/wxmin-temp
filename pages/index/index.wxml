@@ -27,7 +27,8 @@
         <!-- 商品列表 wx:if="{{list.length}}"-->
         <view style="padding-top:0rpx;background:#fff" >
           <view  wx:for="{{list}}"  wx:key="_{{index}}">
-            <shop-item item="{{item}}" />
+          <!-- bindshowDialog="showApply" -->
+            <shop-item item="{{item}}" bindshowDialog="showApply"/>
           </view>
           
         </view>
@@ -40,4 +41,6 @@
 
 
 <city-piker-3 wx:if="{{false}}"  cityList="{{cityList}}" bindcancelCity="onCancelCity" shows="{{showAddress}}" bindcitySelect="oncitySelect"/> 
+<apply-member id="applymember"></apply-member>
+<privacy-policy id="privacy"></privacy-policy>
 <!-- <puzzleVerify id="puzzle" bindfreshImg="onRefreshImg" bindstatus="onCheck" img-url="{{imgUrl}}"></puzzleVerify> -->

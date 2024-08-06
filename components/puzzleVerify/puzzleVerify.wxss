@@ -58,7 +58,8 @@
   align-items: center; */
   background-color: blue;
   position: relative;
-  width: 620rpx;
+  /* width: 620rpx; */
+  width: 670rpx;
   margin:10rpx auto;
   background-color: #eeebec;
   border-radius: 6rpx;
@@ -127,4 +128,39 @@
   transition: all linear 0.2s;
   opacity: 0;
   pointer-events: none;
+}
+.move_box_1{
+  width: 700rpx;
+  /* height: 300rpx; */
+  height: 437.5rpx;
+  background-position:0 0;
+  background-size: 100%;
+  margin-bottom: 30rpx;
+  /* background-size: 100% 100%; */
+
+}
+.move_bg_2{
+  width: 700rpx;
+  height: 437.5rpx;
+  background-position:0 -437.5rpx;
+  background-size: 100%;
+  position: absolute;
+  left: 0;
+  top:0;
+  
+}
+.move_bg_3{
+  width: 700rpx;
+  height: 437.5rpx;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.canvas{
+  position: absolute;
+  left: 0;
+  top:0px;
+  opacity: 1;
+  /* pointer-events: none; */
 }

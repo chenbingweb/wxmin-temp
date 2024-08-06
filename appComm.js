@@ -48,18 +48,18 @@ module.exports={
         me.globalData.screenWidth = res.windowWidth;
         me.globalData.screenHeight = res.windowHeight;
         me.globalData.sysInfo = res;
-        let SDKVersion = res.SDKVersion.split('.');
-        console.log(SDKVersion)
-        let cur = parseInt(SDKVersion[0]) + parseInt(SDKVersion[1])
-        if (cur<6){
-          wx.showModal({
-            title: '温馨提示',
-            content: '您的微信版本不是最新版本，请升级到最新版本',
-            success:res=>{
+        // let SDKVersion = res.SDKVersion.split('.');
+        // console.log(SDKVersion)
+        // let cur = parseInt(SDKVersion[0]) + parseInt(SDKVersion[1])
+        // if (cur<6){
+        //   wx.showModal({
+        //     title: '温馨提示',
+        //     content: '您的微信版本不是最新版本，请升级到最新版本',
+        //     success:res=>{
 
-            }
-          })
-        }
+        //     }
+        //   })
+        // }
       }
     })
 
@@ -312,6 +312,43 @@ module.exports={
           wx.hideLoading()
         })
       }
+    })
+  },
+  uploadImg(tempFilePaths,callBack){
+    wx.showLoading({
+      title: '正在上传...',
+      mask: true
+    })
+    // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+    var tempFilePaths = res.tempFilePaths[0];
+
+    let upload = new Upload({
+      path: _interface.updataImg,
+      filePath: tempFilePaths,
+      formData: {
+        userid: getApp().globalData.userId
+      }
+    })
+    
+    upload.then(res => {
+      wx.hideLoading()
+      //let res = JSON.parse(res)
+      // that.setData({
+      //   img_url: app.globalData.imgUrl + res.img_url
+      // })
+      if (res.errcode == 0) {
+        //that.oneCallBack(res.data)
+        callBack(res.data)
+      }
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+      wx.showToast({
+        title: '上传图片失败',
+        icon: 'none',
+        mask: true
+      })
+      wx.hideLoading()
     })
   },
   //多张上传图片

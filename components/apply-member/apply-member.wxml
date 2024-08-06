@@ -1,0 +1,42 @@
+<view class="mask flex_center {{showDialog?'show':'hide'}}" >
+  <view class="dialog_box">
+    <view class="dialog flex_center">
+      <view class="tip_text">
+        请先注册八达岭奥莱会员
+      </view>
+      <!-- <view class="tip_text" style="font-size: 36rpx;">
+        当天注册无法预约！
+      </view> -->
+      <view class="flex_center close" bindtap="onClose">
+        <image src="./imgs/zc_cha@2x.png" style="width: 48rpx;height: 48rpx;"/>
+      </view>
+      <view class="flex_center vip">
+        <image src="./imgs/zc_VIP@2x.png" style="width:139rpx;height:178rpx"/>
+      </view>
+    </view>
+    <view class="content">
+      <view class="flex_start item">
+          <view class="title">
+            A
+          </view>
+          <view class="title_content">
+            已经注册八达岭奥莱会员，更改为会员 手机号
+          </view>
+      </view>
+      <navigator class="nv" url="../login/login?ty=edit&source=check">
+        更改绑定手机号
+      </navigator>
+      <view class="flex_start item">
+          <view class="title">
+            B
+          </view>
+          <view class="title_content">
+            还未注册八达岭奥莱会员，立即扫码注册！
+          </view>
+      </view>
+      <view class="flex_center qr">
+          <image 	show-menu-by-longpress src="./imgs/zc_QR@2x.jpg" style="width:250rpx;height:250rpx"/>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -136,11 +136,13 @@ export function getShopAppointmentSet(sid, date, that) {
 }
 //预约
 //获取预约详情 doAppointment
-export function doAppointment(tid, num,that) {
+export function doAppointment(tid, num,that,cb,code) {
 
   var data = {
     time_id: tid,
-    user_count: num
+    user_count: num,
+    code,
+    receive_notifications:that.receive_notifications
   }
   var ajax = new Ajax({
     data,
@@ -164,17 +166,29 @@ export function doAppointment(tid, num,that) {
         serverList
       })
       User.reload=true;
+      cb && cb()
       wx.navigateTo({
         url: '../appointSuccess/appointSuccess',
       })
       that._reserInfo = res.data;
-      
+      try{
+        wx.reportEvent("do_success", {
+          "sid": tid+"",
+          "name": res.data.shop||''
+        })
+      }catch(e){}
     }
     else {
       wx.showToast({
         title: res.msg || '网络繁忙，请稍后再试',
         icon: 'none'
       })
+      // let imgCheck = that.selectComponent("#imgCheck")
+      // imgCheck.getImg()
+      let puzzleCheck= that.selectComponent('#puzzle')
+      puzzleCheck.getImg()
+      puzzleCheck.fail()
+     
     }
 
 

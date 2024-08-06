@@ -1,2 +1,3 @@
-<!--pages/login/login.wxml-->
-<loginPage type="{{type}}"/>
+<!--pages/login/login.wxml bindapply="showApply"-->
+<loginPage type="{{type}}" source="{{source}}"/>
+<!-- <apply-member id="applymember" ></apply-member> -->

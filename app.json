@@ -41,7 +41,10 @@
     "tab": "/components/tab/tab",
     "calendar": "/components/calendar/calendar",
     "nav-bar-title": "/components/nav-bar-title/nav-bar-title",
-    "city-piker": "/components/city-piker/city-piker"
+    "city-piker": "/components/city-piker/city-piker",
+    "privacy-policy": "/components/privacy-policy/privacy-policy",
+    "apply-member":"/components/apply-member/apply-member"
+
   },
   "permission": {
     "scope.userLocation": {
@@ -84,5 +87,6 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "workers": "workers"
 }

@@ -1,0 +1,106 @@
+/* components/apply-member/apply-member.wxss */
+@import "../../app.wxss";
+.mask{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  background-color:rgba(0, 0, 0, 0.8)
+}
+.box
+{
+  width: 562rpx;
+  /* height: 548rpx; */
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20rpx;
+  margin-top: -240rpx;
+  padding-top: 65rpx;
+  padding-bottom: 40rpx;
+  position: relative;
+}
+.sure{
+  width: 480rpx;
+  height: 88rpx;
+  background:#FDBE30;
+  opacity: 1;
+  border-radius: 10rpx;
+  margin:0 auto;
+  font-size: 34rpx;
+font-family: PingFang SC;
+font-weight: 500;
+line-height:  88rpx;
+color: #FFFFFF;
+opacity: 1;
+text-align: center;
+}
+.cancel
+{
+  width: 128rpx;
+  height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #d4d3d1;
+  border-radius: 10rpx;
+  line-height: 60rpx;
+}
+.box_input_3{
+  /* flex: 1; */
+  /* background: #ddd; */
+  /* border: 2rpx solid #ddd; */
+
+    width: 480rpx;
+  height: 88rpx;
+  background: rgba(245,246,247,0.39);
+  opacity: 1;
+  border-radius: 10px;
+  margin:0 auto;
+  margin-top: 25rpx;
+  margin-bottom: 40rpx;
+}
+.input{
+  box-sizing: border-box;
+  padding: 0 15rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 60rpx;
+  width: 100%;
+}
+.box_input
+{
+  box-sizing: border-box;
+  padding: 20rpx 0rpx;
+}
+.title{
+
+  color: #333;
+  font-size: 32rpx;
+text-align: center;
+  font-weight: 400;
+  line-height: 1;
+  color: #121212;
+  opacity: 1;
+  margin-bottom: 40rpx;
+}
+.refresh{
+  font-size: 26rpx;
+font-family: PingFang SC;
+font-weight: 400;
+line-height: 1;
+color: #B9BABB;
+text-decoration: underline;
+opacity: 1;
+margin-top: 24rpx;
+text-align: center;
+}
+.close{
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 75rpx;
+  height: 75rpx;
+}

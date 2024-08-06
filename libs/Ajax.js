@@ -1,5 +1,19 @@
 import config from "../config.js";//相关配置文件
 import datas from "../utils/data.js";//假数据
+import md5 from  "./md5"
+import Tool from "./Tool"
+
+function generateRandomString(length) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters[randomIndex];
+  }
+  return result;
+}
+let time = Tool.formatTime(new Date,'-',true)
+
 
 export default class Ajax
 {
@@ -25,7 +39,8 @@ export default class Ajax
       reqtype:undefined,//默认为undefined，表示请求类型是POST
       contentType: undefined,//默认为undefined，表示发送内容类型是application/json
       path:'',//接口地址，默认为空,
-      header:{}
+      header:{},
+      responseType:"text"
     }
     if (typeof param == 'object')
     {
@@ -41,11 +56,21 @@ export default class Ajax
   }
   ajax(options, resolve, reject){
     console.log(config.url + options.path)
+    
+    let nonce=generateRandomString(32)
+    console.log(nonce)
+    let time = Tool.formatTime(new Date,'-',true)
+    let sign = md5(nonce+time+'db763a18-1a14-4fad-aa8c-73a2cf3d10e1')
+  
     const requestTask = wx.request({
+      responseType:options.responseType,
       url: options._path ? options._path : (config.url + options.path),//请求地址+接口 application/x-www-form-urlencoded
       data: options.data,
       method: options.reqtype || 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       header: {
+        sign,
+        time,
+        nonce,
         // "Content-Type": options.contentType == undefined ? "application/json" : "application/x-www-form-urlencoded",
         "Content-Type": options.contentType == undefined ? "application/x-www-form-urlencoded" : " application/json",
        ...options.header

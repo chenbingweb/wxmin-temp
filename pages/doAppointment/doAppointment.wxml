@@ -58,3 +58,6 @@
   </view>
 </view>
 
+<img-check id="imgCheck" bindcomfirm="onConfirm"></img-check>
+<apply-member id="applymember" source="detail"></apply-member>
+<puzzleVerify id="puzzle"  bindstatus="onCheck" ></puzzleVerify>

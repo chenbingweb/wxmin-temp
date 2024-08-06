@@ -148,9 +148,7 @@ Page({
       areaFn: this.areaFn,
       cateFn: this.cateFn
     })
-    // setTimeout(()=>{
-    //   this.selectComponent('#puzzle').open()
-    // },2000)
+  
     // wx.getSystemInfo({
     //   success: (res)=> {
     //     let { platform, model, windowHeight } =res;
@@ -187,13 +185,39 @@ Page({
       }
     })
     User.UserToLogin(res => {
-    
+      console.log(res)
+     
+      if(res.access_token){
+        // setTimeout(()=>{
+        //   this.selectComponent('#puzzle').open()
+        // },2000)
+        if(res.isOutletsMember===false && res.isValidMember){
+          wx.showModal({
+            title: '提示',
+            content: res.validMemberMsg,
+            success:res=>{
+              if(res.confirm){
+                this.showApply()
+              }
+            }
+          })
+          
+        }
+      }
       getIndex(this)
     
       wx.hideLoading()
     
     })
     
+  },
+  showApply(){
+    let applymember = this.selectComponent('#applymember')
+    applymember.showDialogFn()
+  },
+  hideDiglog(){
+    let applymember = this.selectComponent('#applymember')
+    applymember.onClose()
   },
   areaFn(aid){
     /*
@@ -273,6 +297,13 @@ Page({
       //   })
       // },5000)
       console.log(this.getTabBar())
+    }
+    if(User.checkMember){
+      User.checkMember = false
+      if(User.userInfo.isOutletsMember===false && User.userInfo.isValidMember){
+        this.showApply()
+        
+      }
     }
     // if (User.userId)
     // {

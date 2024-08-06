@@ -1,0 +1,82 @@
+/* commont/components/privacy-policy/privacy-policy.wxss */
+.fixed{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  background:rgba(0,0,0,0.6);
+  border-radius: 0rpx 0rpx 0rpx 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+ 
+}
+.box
+{
+  width: 640rpx;
+  height: 600rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx 24rpx 24rpx 24rpx;
+  opacity: 1;
+  box-sizing: border-box;
+  padding: 60rpx 0;
+ 
+}
+.title{
+  font-size: 36rpx;
+  font-family: Alibaba PuHuiTi 2.0-75 SemiBold, Alibaba PuHuiTi 20;
+  font-weight: normal;
+  color: #333333;
+  text-align: center;
+}
+.content{
+  font-size: 32rpx;
+  font-family: Alibaba PuHuiTi 2.0-55 Regular, Alibaba PuHuiTi 20;
+  font-weight: normal;
+  color: #666666;
+  box-sizing: border-box;
+  padding: 40rpx 50rpx;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.left_btn{
+  width: 240rpx;
+  line-height: 92rpx;
+  border-radius: 160rpx 160rpx 160rpx 160rpx;
+  opacity: 1;
+  border: 1rpx solid #ffbe30;
+  font-size: 32rpx;
+  font-family: Alibaba PuHuiTi 2.0-55 Regular, Alibaba PuHuiTi 20;
+  font-weight: normal;
+  color: #333333;
+  text-align: center;
+  position: relative;
+}
+.right_btn{
+  width: 240rpx;
+  line-height: 92rpx;
+  background: #ffbe30;
+  border-radius: 160rpx 160rpx 160rpx 160rpx;
+  font-size: 32rpx;
+  font-family: Alibaba PuHuiTi 2.0-85 Bold, Alibaba PuHuiTi 20;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-align: center;
+  margin-left: 32rpx;
+  position: relative;
+  
+}
+.opacity{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}

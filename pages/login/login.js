@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type:""
+    type:"",
+    source:""
   },
 
   /**
@@ -19,8 +20,13 @@ Page({
       
     }
     this.setData({
-      type:options.ty||''
+      type:options.ty||'',
+      source:options.source||''
     })
+  },
+  showApply(){
+    let applymember = this.selectComponent('#applymember')
+    applymember.showDialogFn()
   },
 
   /**
@@ -68,7 +74,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  // onShareAppMessage: function () {
 
-  }
+  // }
 })

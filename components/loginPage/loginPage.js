@@ -15,6 +15,10 @@ Component({
       observer:function(n){
 
       }
+    },
+    source:{
+      type:String,
+      value:"",
     }
   },
 
@@ -28,7 +32,8 @@ Component({
     check_code:'',
     selected:false,
     mobile_code:'',
-    mobile:""
+    mobile:"",
+    userInfo:{}
   },
   created(){
     this.code_id=''
@@ -43,6 +48,7 @@ Component({
    */
   methods: {
     onGetPhone({detail}){
+      debugger
       console.log(detail)
       if (detail.errMsg=="getUserInfo:fail auth deny"||detail.errMsg.indexOf('fail')>-1){
         wx.showToast({
@@ -55,17 +61,63 @@ Component({
         title: '获取中...',
         mask:true
       })
+      
       getMobile.bind(this)(detail)
+
+      try{
+        wx.reportEvent("update_mobile", {
+          "err_msg":detail.errMsg||'',
+          "code": detail.code||''
+        })
+        // if(this.data.type=='edit'){
+         
+        // }
+        // else{
+        //   wx.reportEvent("register_mobile", {
+        //     "code": detail.code||'',
+        //     "err_msg": detail.errMsg||''
+        //   })
+        // }
+        
+      }catch(e){
+
+      }
     },
     onSelect(){
       this.setData({
         selected: !this.data.selected
       })
     },
-
+    onChooseAvatar(e){
+      console.log(e)
+    },
+    confirmNickName({detail}){
+      
+      wx.showLoading({
+        title: '登录中...',
+        mask: true
+      })
+      wx.login({
+        success:res=>{
+          let data = {
+            // check_code: this.data.check_code,
+            // mobile: this.data.mobile,
+            // verify_code_id:this.code_id,
+            rawData:JSON.stringify({nickName:detail.nickName}),
+            ...res,
+            mobile_code:detail.mobile_code
+          }
+          console.log(data)
+        
+          userSign.call(this, data)
+        }
+      })
+      console.log(detail)
+    },
     //登录
     onGotUserInfo({detail}){
     
+      
       // console.log(detail)
       // if (detail.errMsg=="getUserInfo:fail auth deny"||detail.errMsg.indexOf('fail')>-1)
       // {
@@ -115,7 +167,7 @@ Component({
       //   return
       // }
       debugger
-      if(this.data.mobile_code==''){
+      if(this.data.mobile_code=='' && this.data.type=='edit'){
         return
       }
       if(this.properties.type=='edit'){
@@ -128,42 +180,53 @@ Component({
         })
         return 
       }
-      wx.getUserProfile({
-        desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-        success: (detail) => {
-
-       
-            wx.showLoading({
-              title: '登录中...',
-              mask: true
-            })
-            wx.login({
-              success:res=>{
-                let data = {
-                  // check_code: this.data.check_code,
-                  // mobile: this.data.mobile,
-                  // verify_code_id:this.code_id,
-                  ...detail,
-                  ...res,
-                  mobile_code:this.data.mobile_code
-                }
-                console.log(data)
-              
-                userSign.call(this, data)
-              }
-            })
-          },
-          fail:()=>{
-            wx.navigateBack({
-          
-            })
-          }
+      let userInfoCom = this.selectComponent("#userInfo",this) 
+      userInfoCom.open()
+      try{
+        wx.reportEvent("register_tip", {
+          "click_register": "点击进入注册"
         })
+      }catch(e){
+
+      }
+      // wx.getUserProfile({
+      //   desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      //   success: (detail) => {
+        // wx.showLoading({
+        //   title: '登录中...',
+        //   mask: true
+        // })
+        // wx.login({
+        //   success:res=>{
+        //     let data = {
+        //       // check_code: this.data.check_code,
+        //       // mobile: this.data.mobile,
+        //       // verify_code_id:this.code_id,
+        //       row:{
+        //         nickname:""
+        //       },
+        //       ...res,
+        //       mobile_code:this.data.mobile_code
+        //     }
+        //     console.log(data)
+          
+        //     userSign.call(this, data)
+        //   }
+        // })
+      //   },
+      //   fail:()=>{
+      //     wx.navigateBack({
+        
+      //     })
+      //   }
+      // })
+            
+        
     },
 
     //登录
-    onFormSubmit({detail}){
- 
+    onFormSubmit(e){
+     
       console.log(detail);
       var myEventOption = {
         bubbles: false,
@@ -297,8 +360,14 @@ function userSign(data){
       
       setTimeout(()=>{
       
-        User.UserToLogin(() => {
+        User.UserToLogin((res) => {
           User.reload = true;
+          User.checkMember=res.isValidMember
+          // if(res.isOutletsMember===false && res.isValidMember){
+          //   this.triggerEvent('apply')
+          //   return
+          // }
+          
           // 触发事件的选项
           this.triggerEvent('isLogin', {}, this.myEventOption)
           wx.navigateBack({
@@ -319,7 +388,7 @@ function userSign(data){
     }
     else {
       wx.showToast({
-        title: '系统繁忙',
+        title: res.msg||'系统繁忙',
         icon: 'none'
       })
     }
@@ -353,7 +422,7 @@ function getMobile(data){
       })
     
     }
-    else if(res.errcode==1)
+    else if(res.errcode==-1)
     {
       wx.showToast({
         title: res.msg||'网络异常，请稍后再试',
@@ -365,6 +434,13 @@ function getMobile(data){
         title: '网络异常，请稍后再试',
         icon: 'none'
       })
+    }
+    try{
+      wx.reportEvent("register_mobile_success", {
+        "mobile": res.data||''
+      })
+    }catch(e){
+
     }
   })
   ajax.catch(err => {
@@ -388,13 +464,49 @@ function updateMobile(data){
   ajax.then(res => {
     wx.hideLoading()
     if (res.errcode == 200) {
-     wx.showToast({
-       icon:"success",
-       title: '修改成功',
-     })
-     User.userInfo.mobile = this.data.mobile;
+      // if(User.userInfo.isValidMember==false){}
+        wx.showToast({
+          icon:"success",
+          title: '修改成功',
+        })
+      
+     
+      // if(User.userInfo.isValidMember){}
+        User.userInfo.mobile = this.data.mobile;
+        User.userInfo.isOutletsMember = res.data.isOutletsMember
+        if(res.data.isOutletsMember){
+          // wx.showToast({
+          //   title: '修改成功,是奥莱会员',
+          //   icon:"success"
+          // })
+          let objIndex = getApp().getPage("pages/index/index")
+          if(objIndex){
+            objIndex.hideDiglog()
+          }
+          let objDetail = getApp().getPage("pages/doAppointment/doAppointment")
+          if(objDetail){
+            objDetail.hideDiglog()
+          }
+        }
+        else{
+          User.checkMember=true
+          // wx.showToast({
+          //   title: '修改成功,非奥莱会员',
+          //   icon:"none"
+          // })
+        }
+        try{
+          wx.reportEvent("update_mobile_success", {
+            "mobile": this.data.mobile+''
+          })
+        }catch(e){
+
+        }
+      
+      
      setTimeout(()=>{
        wx.navigateBack()
+       
      },2000)
     
     }
@@ -410,6 +522,7 @@ function updateMobile(data){
         title:res.msg|| '网络异常，请稍后再试',
         icon: 'none'
       })
+
     }
   })
   ajax.catch(err => {
@@ -418,5 +531,6 @@ function updateMobile(data){
       title: '网络异常，请稍后再试',
       icon: 'none'
     })
+   
   })
 }
