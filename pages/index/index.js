@@ -64,7 +64,7 @@ Page({
     let { list } = this.data;
     detail.forEach((item,index)=>{
       item.ani = Ani.opacity().step({delay:(index+5)*100}).export()
-      item.logo = getApp().globalData.imgUrl + item.logo
+      item.logo = item.logo.indexOf('http')>-1?item.logo: getApp().globalData.imgUrl + item.logo
     })
     list.push(...detail);
     this.setData({
@@ -187,7 +187,7 @@ Page({
     User.UserToLogin(res => {
       console.log(res)
      
-      if(res.access_token){
+      if(res&&res.access_token){
         // setTimeout(()=>{
         //   this.selectComponent('#puzzle').open()
         // },2000)

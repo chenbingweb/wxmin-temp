@@ -13,12 +13,16 @@
   online wxaac1ec0ffd37fc96
 */
 module.exports={
-  url:'https://outlets.jeemoo.com/client',
-  imgUrl:'https://outlets.jeemoo.com/',//图片地址
+  // url:'https://outlets.jeemoo.com/client',
+  url:"/client",
+  imgUrl:'https://outlets-admin-117623-7-1304397992.sh.run.tcloudbase.com/',//'https://outlets.jeemoo.com/',//图片地址
   //  url:'http://outlets.netwintech.com/client',
   // imgUrl: 'http://outlets.netwintech.com/',//图片地址
   staticUrl:'',
   debug:false,//如果为真，则使用假数据
+  resourceAppid:"wxaac1ec0ffd37fc96",
+  resourceEnv:"prod-1ghi3h5k4aad1151",
+  wxserver:"outlets",
   //自定义导航（参考案例，根据实际项目来配置相关属性）
   /*
    {

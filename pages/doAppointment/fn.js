@@ -26,7 +26,7 @@ export function getShopDetail(sid,that) {
     if (res.errcode == 200) {
       console.log(getApp().globalData.imgUrl )
       console.log(getApp().globalData.imgUrl + res.data.logo)
-      res.data.logo = getApp().globalData.imgUrl + res.data.logo;
+      res.data.logo =res.data.logo.indexOf('http')>-1?res.data.logo: getApp().globalData.imgUrl + res.data.logo //getApp().globalData.imgUrl + res.data.logo;
       res.data.refresh_time = parseInt(res.data.refresh_time)*1000;
       that.setData({
       

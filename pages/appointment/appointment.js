@@ -52,7 +52,7 @@ Page({
       item.an = null
       
       item.ani = Ani.opacity().step({ delay: (index + 3) * 100 }).export()
-      item.shop.logo = getApp().globalData.imgUrl + item.shop.logo 
+      item.shop.logo =item.shop.logo.indexOf('http')>-1?item.shop.logo: getApp().globalData.imgUrl + item.shop.logo//getApp().globalData.imgUrl + item.shop.logo 
     })
     list.push(...detail);
     this.setData({

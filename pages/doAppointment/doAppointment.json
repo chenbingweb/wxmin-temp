@@ -2,6 +2,7 @@
   "usingComponents": {
     "swiper-date":"../../components/swiper-date/swiper-date",
     "img-check":"../../components/img-check/img-check",
+    "t-captcha": "plugin://captcha/t-captcha",
     "puzzleVerify":"../../components/puzzleVerify/puzzleVerify"
   },
   "navigationBarTitleText": "预约"

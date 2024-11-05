@@ -87,6 +87,12 @@
       }
     ]
   },
+  "plugins": {
+      "captcha": {
+          "version": "2.0.0",
+          "provider": "wx1fe8d9a3cb067a75"
+      }
+  },
   "sitemapLocation": "sitemap.json",
   "workers": "workers"
 }
